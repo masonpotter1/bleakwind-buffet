@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+* Author: Mason Potter
+* Class name: CIS 400
+* Purpose: Flavor options for some of the drinks 
+*/
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

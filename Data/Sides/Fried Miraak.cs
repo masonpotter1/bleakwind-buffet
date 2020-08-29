@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+* Author: Mason Potter
+* Class name: CIS 400
+* Purpose: One Side option available on the menu
+*/
+
+
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,7 +55,9 @@ namespace Data.Sides
 
         public override string ToString()
         {
-            return ($"{OrderSize} Fried Miraak");
+            return ($"{OrderSize} Fried Miraak" +
+                $"" +
+                $"");
         }
     }
 }

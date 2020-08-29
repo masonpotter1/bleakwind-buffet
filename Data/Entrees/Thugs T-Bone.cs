@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Mason Potter
+* Class name: CIS 400
+* Purpose: One Entree option available on the menu
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

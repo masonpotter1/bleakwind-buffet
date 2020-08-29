@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+* Author: Mason Potter
+* Class name: CIS 400
+* Purpose: One Drink option available 
+*/
+
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
