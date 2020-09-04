@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Schema;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    public class Briarheart_Burger
+    public class BriarheartBurger
     {
         /// <summary>
         /// gets the price of the Item

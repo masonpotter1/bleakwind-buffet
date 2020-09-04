@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    public class Double_Draugr
+    public class DoubleDraugr
     {
         /// <summary>
         /// gets the price of the Item

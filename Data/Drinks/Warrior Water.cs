@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
-    class Warrior_Water
+    class WarriorWater
     {
         public double Price
         {

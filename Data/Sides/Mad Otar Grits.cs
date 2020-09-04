@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
-    class Mad_Otar_Grits
+    class MadOtarGrits
     {
         public double Price
         {

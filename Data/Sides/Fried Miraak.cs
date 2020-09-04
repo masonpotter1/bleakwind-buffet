@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
-    class Fried_Miraak
+    class FriedMiraak
     {
         public double Price
         {

@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
-    public class Garden_Orc_Omelette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// gets the price of the Item

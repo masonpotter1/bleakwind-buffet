@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
-    class Vokun_Salad
+    class VokunSalad
     {
         public double Price
         {
