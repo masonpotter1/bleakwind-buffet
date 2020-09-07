@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+        /// <summary>
+        /// A class representing an order of the Garden Orc Omlette
+        /// </summary>
     public class GardenOrcOmelette
     {
         /// <summary>
@@ -28,14 +31,27 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 404; }
         }
 
+        /* 
+         private vriable of the list of special instructions 
+        */
         private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// Public method to return the list of instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
 
+        /// <summary>
+        /// A private variable representing the broccoli - defaulted to true
+        /// </summary>
         private bool Broccoli = true;
+        /// <summary>
+        /// A public class that represents the broccoli, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool broccoli
         {
             get { return Broccoli; }
@@ -46,7 +62,14 @@ namespace BleakwindBuffet.Data.Entrees
                 Broccoli = value;
             }
         }
+        /// <summary>
+        /// A private variable representing the mushrooms - defaulted to true
+        /// </summary>
         private bool Mushrooms = true;
+        /// <summary>
+        /// A public class that represents the mushrooms, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool mushrooms
         {
             get { return Mushrooms; }
@@ -58,7 +81,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Tomato - defaulted to true
+        /// </summary>
         private bool Tomato = true;
+        /// <summary>
+        /// A public class that represents the Tomato, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool tomato
         {
             get { return Tomato; }
@@ -70,7 +100,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Cheddar - defaulted to true
+        /// </summary>
         private bool Cheddar = true;
+        /// <summary>
+        /// A public class that represents the Cheddar, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool cheddar
         {
             get { return Cheddar; }
@@ -81,7 +118,9 @@ namespace BleakwindBuffet.Data.Entrees
                 Cheddar = value;
             }
         }
-
+        /// <summary>
+        /// Override Method to return the item size and item name 
+        /// </summary>
         public override string ToString()
         {
             return ("Garden Orc Omelette");

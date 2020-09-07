@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+        /// <summary>
+        /// A class representing an order of the Smokehouse Skeleton
+        /// </summary>
     public class SmokehouseSkeleton
     {
         /// <summary>
@@ -28,14 +31,27 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 602; }
         }
 
+         /* 
+         private vriable of the list of special instructions 
+        */
         private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// Public method to return the list of instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
 
+        /// <summary>
+        /// A private variable representing the sausageLink - defaulted to true
+        /// </summary>
         private bool SausageLink = true;
+        /// <summary>
+        /// A public class that represents the sausageLink, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool sausageLink
         {
             get { return SausageLink; }
@@ -46,7 +62,14 @@ namespace BleakwindBuffet.Data.Entrees
                 SausageLink = value;
             }
         }
+        /// <summary>
+        /// A private variable representing the HashBrowns - defaulted to true
+        /// </summary>
         private bool HashBrowns = true;
+        /// <summary>
+        /// A public class that represents the HashBrowns, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool hashBrowns
         {
             get { return HashBrowns; }
@@ -58,7 +81,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Pancake - defaulted to true
+        /// </summary>
         private bool Pancake = true;
+        /// <summary>
+        /// A public class that represents the Pancake, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool pancake
         {
             get { return Pancake; }
@@ -70,7 +100,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Egg - defaulted to true
+        /// </summary>
         private bool Egg = true;
+        /// <summary>
+        /// A public class that represents the Egg, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool egg
         {
             get { return Egg; }
@@ -81,7 +118,9 @@ namespace BleakwindBuffet.Data.Entrees
                 Egg = value;
             }
         }
-
+        /// <summary>
+        /// Override Method to return the item size and item name 
+        /// </summary>
         public override string ToString()
         {
             return ("Smokehouse Skeleton");

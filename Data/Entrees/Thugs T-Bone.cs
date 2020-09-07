@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+        /// <summary>
+        /// A class representing an order of the Thug's T-Bone 
+        /// </summary>
     public class ThugsTBone
     {        /// <summary>
              /// gets the price of the Item
@@ -27,11 +30,20 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 982; }
         }
 
+        /* 
+         private vriable of the list of special instructions 
+        */
         private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// Public method to return the list of instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
+        /// <summary>
+        /// Override Method to return the item size and item name 
+        /// </summary>
         public override string ToString()
         {
             return ("Thugs T-Bone");

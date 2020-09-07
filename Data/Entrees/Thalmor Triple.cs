@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+        /// <summary>
+        /// A class representing an order of the Thalmor Triple
+        /// </summary>
     public class ThalmorTriple
     {
         /// <summary>
@@ -28,14 +31,26 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 943; }
         }
 
+        /* 
+         private vriable of the list of special instructions 
+        */
         private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// Public method to return the list of instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
 
+        /// <summary>
+        /// A private variable representing a bun - defaulted to true
+        /// </summary>
         private bool Bun = true;
+        /// <summary>
+        /// A public class that represents a bun, if false it updates specialInstructions
+        /// </summary>
         public bool bun
         {
             get { return Bun; }
@@ -46,7 +61,14 @@ namespace BleakwindBuffet.Data.Entrees
                 Bun = value;
             }
         }
+        /// <summary>
+        /// A private variable representing the ketchup - defaulted to true
+        /// </summary>
         private bool Ketchup = true;
+        /// <summary>
+        /// A public class that represents the ketchup, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool ketchup
         {
             get { return Ketchup; }
@@ -58,7 +80,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Mustard - defaulted to true
+        /// </summary>
         private bool Mustard = true;
+        /// <summary>
+        /// A public class that represents the Mustard, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool mustard
         {
             get { return Mustard; }
@@ -66,11 +95,18 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold mustard");
                 else { specialInstructions.Remove("Hold mustard"); }
-                mustard = value;
+                Mustard = value;
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Pickle - defaulted to true
+        /// </summary>
         private bool Pickle = true;
+        /// <summary>
+        /// A public class that represents the Pickle, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool pickle
         {
             get { return Pickle; }
@@ -78,11 +114,18 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold pickle");
                 else { specialInstructions.Remove("Hold pickle"); }
-                pickle = value;
+                Pickle = value;
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Cheese - defaulted to true
+        /// </summary>
         private bool Cheese = true;
+        /// <summary>
+        /// A public class that represents the Cheese, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool cheese
         {
             get { return Cheese; }
@@ -90,11 +133,18 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 if (!value) specialInstructions.Add("Hold cheese");
                 else { specialInstructions.Remove("Hold cheese"); }
-                cheese = value;
+                Cheese = value;
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Tomato - defaulted to true
+        /// </summary>
         private bool Tomato = true;
+        /// <summary>
+        /// A public class that represents the Tomato, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool tomato
         {
             get { return Tomato; }
@@ -106,7 +156,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Lettus - defaulted to true
+        /// </summary>
         private bool Lettuce = true;
+        /// <summary>
+        /// A public class that represents the Lettus, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool lettuce
         {
             get { return Lettuce; }
@@ -118,7 +175,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Mayo - defaulted to true
+        /// </summary>
         private bool Mayo = true;
+        /// <summary>
+        /// A public class that represents the Mayo, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool mayo
         {
             get { return Mayo; }
@@ -130,7 +194,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        private bool Bacon  = true;
+        /// <summary>
+        /// A private variable representing the Bacon - defaulted to true
+        /// </summary>
+        private bool Bacon = true;
+        /// <summary>
+        /// A public class that represents the Bacon, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool bacon
         {
             get { return Bacon; }
@@ -142,7 +213,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A private variable representing the Egg - defaulted to true
+        /// </summary>
         private bool Egg = true;
+        /// <summary>
+        /// A public class that represents the Egg, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool egg
         {
             get { return Egg; }
@@ -153,7 +231,9 @@ namespace BleakwindBuffet.Data.Entrees
                 Egg = value;
             }
         }
-
+        /// <summary>
+        /// Override Method to return the item size and item name 
+        /// </summary>
         public override string ToString()
         {
             return ("Thalmor Triple");

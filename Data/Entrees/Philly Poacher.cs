@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+        /// <summary>
+        /// A class representing an order of the Philly Poacher
+        /// </summary>
     public class PhillyPoacher
     {
         /// <summary>
@@ -28,14 +31,27 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 784; }
         }
 
+          /* 
+         private vriable of the list of special instructions 
+        */
         private List<string> specialInstructions = new List<string>();
+        /// <summary>
+        /// Public method to return the list of instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
 
+        /// <summary>
+        /// A private variable representing the sirloin - defaulted to true
+        /// </summary>
         private bool Sirloin = true;
+        /// <summary>
+        /// A public class that represents the sirloin, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool sirloin
         {
             get { return Sirloin; }
@@ -46,7 +62,14 @@ namespace BleakwindBuffet.Data.Entrees
                 Sirloin = value;
             }
         }
+        /// <summary>
+        /// A private variable representing the Onion - defaulted to true
+        /// </summary>
         private bool Onion = true;
+        /// <summary>
+        /// A public class that represents the Onion, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool onion
         {
             get { return Onion; }
@@ -58,7 +81,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+         /// <summary>
+        /// A private variable representing the Roll - defaulted to true
+        /// </summary>
         private bool Roll = true;
+        /// <summary>
+        /// A public class that represents the Roll, if false 
+        /// it updates specialInstructions
+        /// </summary>
         public bool roll
         {
             get { return Roll; }
@@ -69,10 +99,12 @@ namespace BleakwindBuffet.Data.Entrees
                 Roll = value;
             }
         }
-
+        /// <summary>
+        /// Override Method to return the item size and item name 
+        /// </summary>
         public override string ToString()
         {
-            return ("Philly Poache");
+            return ("Philly Poacher");
         }
 
     }
