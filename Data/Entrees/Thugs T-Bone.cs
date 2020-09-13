@@ -4,6 +4,7 @@
 * Purpose: One Entree option available on the menu
 */
 
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,11 +14,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// A class representing an order of the Thug's T-Bone 
         /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {        /// <summary>
              /// gets the price of the Item
              /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.44; }
         }
@@ -25,7 +26,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// gets the calories 
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 982; }
         }
@@ -37,7 +38,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Public method to return the list of instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

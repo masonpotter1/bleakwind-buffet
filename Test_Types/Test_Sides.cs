@@ -17,7 +17,7 @@ namespace Test_Types
         public void VokunCost(Size size, double cost)
         {
             var Side = new VokunSalad();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cost, Side.Price);
         }
 
@@ -28,7 +28,7 @@ namespace Test_Types
         public void VokunCals(Size size, uint cal)
         {
             var Side = new VokunSalad();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cal, Side.Calories);
         }
 
@@ -39,7 +39,7 @@ namespace Test_Types
         public void GritsCost(Size size, double cost)
         {
             var Side = new MadOtarGrits();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cost, Side.Price);
         }
 
@@ -50,7 +50,7 @@ namespace Test_Types
         public void GritsCals(Size size, uint cal)
         {
             var Side = new MadOtarGrits();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cal, Side.Calories);
         }
 
@@ -61,7 +61,7 @@ namespace Test_Types
         public void FriedMiraakCost(Size size, double cost)
         {
             var Side = new FriedMiraak();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cost, Side.Price);
         }
 
@@ -72,7 +72,7 @@ namespace Test_Types
         public void FriedMiraakCals(Size size, uint cal)
         {
             var Side = new FriedMiraak();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cal, Side.Calories);
         }
 
@@ -83,7 +83,7 @@ namespace Test_Types
         public void DragonBornCost(Size size, double cost)
         {
             var Side = new DragonbornWaffleFries();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cost, Side.Price);
         }
 
@@ -94,7 +94,7 @@ namespace Test_Types
         public void DragonbornCal(Size size, uint cal)
         {
             var Side = new DragonbornWaffleFries();
-            Side.orderSize = size;
+            Side.Size = size;
             Assert.Equal(cal, Side.Calories);
         }
 

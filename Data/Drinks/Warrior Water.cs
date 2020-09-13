@@ -5,6 +5,8 @@
 */
 
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +16,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing an order of Warrior Water
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drinks
     {
         /// <summary>
         /// gets the prices of the various sizes
@@ -22,14 +24,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (cupSize.Equals(Size.Small)) { return 0; } // small
-                if (cupSize.Equals(Size.Medium)) { return 0; } // medium
-                if (cupSize.Equals(Size.Large)) { return 0;} // large
-                else {throw new NotImplementedException($"Unknown size {CupSize}"); }
+                if (Size.Equals(Size.Small)) { return 0; } // small
+                if (Size.Equals(Size.Medium)) { return 0; } // medium
+                if (Size.Equals(Size.Large)) { return 0;} // large
+                else {throw new NotImplementedException($"Unknown size {Size}"); }
             }
         }
 
@@ -40,14 +42,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (cupSize.Equals(Size.Small)) { return 0; } // small
-                if (cupSize.Equals(Size.Medium)) { return 0; } // medium
-                if (cupSize.Equals(Size.Large)) { return 0; } // large
-                else {throw new NotImplementedException($"Unknown size {CupSize}"); }
+                if (Size.Equals(Size.Small)) { return 0; } // small
+                if (Size.Equals(Size.Medium)) { return 0; } // medium
+                if (Size.Equals(Size.Large)) { return 0; } // large
+                else {throw new NotImplementedException($"Unknown size {Size}"); }
             }
         }
 
@@ -58,25 +60,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Public method to return the list of instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
         /* 
         private variable that holds the size of the drink
         */
-        private Enum CupSize = Size.Small;
-        /// <summary>
-        /// Public method to return or set the size of the Drink
-        /// </summary>
-        public Enum cupSize
-        {
-            get { return CupSize; }
-            set
-            {
-                CupSize = value;
-            }
-        }
+       
+
 
         /*
          * Private bool that is set to false by default
@@ -120,7 +112,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override string ToString()
         {
-            return ($"{CupSize} Warrior Water");
+            return ($"{Size} Warrior Water");
         }
     }
 }

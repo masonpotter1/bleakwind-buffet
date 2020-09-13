@@ -4,6 +4,7 @@
 * Purpose: One Entree option available on the menu
 */
 
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,12 +15,12 @@ namespace BleakwindBuffet.Data.Entrees
         /// A class representing an order of the Briarheart Burger
         /// </summary> 
 {
-    public class BriarheartBurger
+    public class BriarheartBurger  : Entree
     {
         /// <summary>
         /// gets the price of the Item
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.32; }
         }
@@ -27,7 +28,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// gets the calories 
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 743; }
         }
@@ -39,7 +40,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Public method to return the list of instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }

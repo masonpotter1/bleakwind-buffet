@@ -12,31 +12,31 @@ namespace Test_Types
         public void DrinkPropertyDefaults()
         {
             WarriorWater water = new WarriorWater();
-            Assert.Equal(Size.Small, water.cupSize);
+            Assert.Equal(Size.Small, water.Size);
             Assert.True(water.ice);
             Assert.False(water.lemon);
             Assert.True(water.SpecialInstructions.Count == 0);
 
             SailorSoda soda = new SailorSoda();
-            Assert.Equal(Size.Small, soda.cupSize);
+            Assert.Equal(Size.Small, soda.Size);
             Assert.Equal(SodaFlavor.Cherry, soda.flavor);
             Assert.True(soda.ice);
             Assert.True(soda.SpecialInstructions.Count == 0);
 
             MarkarthMilk milk = new MarkarthMilk();
-            Assert.Equal(Size.Small, milk.cupSize);
+            Assert.Equal(Size.Small, milk.Size);
             Assert.False(milk.ice);
             Assert.True(milk.SpecialInstructions.Count == 0);
 
             CandlehearthCoffee Coffee = new CandlehearthCoffee();
-            Assert.Equal(Size.Small, Coffee.cupSize);
+            Assert.Equal(Size.Small, Coffee.Size);
             Assert.False(Coffee.decaf);
             Assert.False(Coffee.roomForCream);
             Assert.False(Coffee.ice);
             Assert.True(Coffee.SpecialInstructions.Count == 0);
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
-            Assert.Equal(Size.Small, aj.cupSize);
+            Assert.Equal(Size.Small, aj.Size);
             Assert.False(aj.ice);
             Assert.True(aj.SpecialInstructions.Count == 0);
         }
@@ -48,7 +48,7 @@ namespace Test_Types
         public void WaterCals(Size size, uint cal)
         {
             var Drink = new WarriorWater();
-            Drink.cupSize = size;
+            Drink.Size = size;
             Assert.Equal(cal, Drink.Calories);
         }
 
@@ -59,7 +59,7 @@ namespace Test_Types
         public void WaterCost(Size size, double cost)
         {
             var Drink = new WarriorWater();
-            Drink.cupSize = size;
+            Drink.Size = size;
             
             Assert.Equal(cost, Drink.Price);
         }
@@ -71,7 +71,7 @@ namespace Test_Types
         public void SodaCals(Size size, uint cal)
         {
             var Drink = new SailorSoda();
-            Drink.cupSize = size;
+            Drink.Size = size;
             Assert.Equal(cal, Drink.Calories);
         }
 
@@ -82,7 +82,7 @@ namespace Test_Types
         public void SodaCost(Size size, double cost)
         {
             var Drink = new SailorSoda();
-            Drink.cupSize = size;
+            Drink.Size = size;
 
             Assert.Equal(cost, Drink.Price);
         }
@@ -94,7 +94,7 @@ namespace Test_Types
         public void MilkCals(Size size, uint cal)
         {
             var Drink = new MarkarthMilk();
-            Drink.cupSize = size;
+            Drink.Size = size;
             Assert.Equal(cal, Drink.Calories);
         }
 
@@ -105,7 +105,7 @@ namespace Test_Types
         public void MilkCost(Size size, double cost)
         {
             var Drink = new MarkarthMilk();
-            Drink.cupSize = size;
+            Drink.Size = size;
 
             Assert.Equal(cost, Drink.Price);
         }
@@ -117,7 +117,7 @@ namespace Test_Types
         public void CoffeeCals(Size size, uint cal)
         {
             var Drink = new CandlehearthCoffee();
-            Drink.cupSize = size;
+            Drink.Size = size;
             Assert.Equal(cal, Drink.Calories);
         }
 
@@ -128,7 +128,7 @@ namespace Test_Types
         public void CoffeeCost(Size size, double cost)
         {
             var Drink = new CandlehearthCoffee();
-            Drink.cupSize = size;
+            Drink.Size = size;
 
             Assert.Equal(cost, Drink.Price);
         }
@@ -140,7 +140,7 @@ namespace Test_Types
         public void AJCals(Size size, uint cal)
         {
             var Drink = new AretinoAppleJuice();
-            Drink.cupSize = size;
+            Drink.Size = size;
             Assert.Equal(cal, Drink.Calories);
         }
 
@@ -151,7 +151,7 @@ namespace Test_Types
         public void AJCost(Size size, double cost)
         {
             var Drink = new AretinoAppleJuice();
-            Drink.cupSize = size;
+            Drink.Size = size;
 
             Assert.Equal(cost, Drink.Price);
         }

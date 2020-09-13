@@ -5,6 +5,7 @@
 */
 
 using BleakwindBuffet.Data.Enums;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing an order of DragonBorn Waffle Fries 
     /// </summary>   
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
         /// <summary>
         /// gets the prices of the various sizes
@@ -22,14 +23,14 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the size is not known 
         /// </exception>
-        public double Price 
+        public override double Price 
         {
             get
             {
-                if (OrderSize.Equals(Size.Small)) { return .42; } // small
-                if (OrderSize.Equals(Size.Medium)) { return .76; } // medium
-                if (OrderSize.Equals(Size.Large))   {return .96;} // large
-                else {throw new NotImplementedException($"Unknown size {OrderSize}"); }
+                if (Size.Equals(Size.Small)) { return .42; } // small
+                if (Size.Equals(Size.Medium)) { return .76; } // medium
+                if (Size.Equals(Size.Large))   {return .96;} // large
+                else {throw new NotImplementedException($"Unknown size {Size}"); }
             }
         }
 
@@ -40,14 +41,14 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
-                if (OrderSize.Equals(Size.Small)) { return 77; } // small
-                if (OrderSize.Equals(Size.Medium)) { return 89; } // medium
-                if (OrderSize.Equals(Size.Large))   {return 100;} // large
-                else {throw new NotImplementedException($"Unknown size {OrderSize}"); }
+                if (Size.Equals(Size.Small)) { return 77; } // small
+                if (Size.Equals(Size.Medium)) { return 89; } // medium
+                if (Size.Equals(Size.Large))   {return 100;} // large
+                else {throw new NotImplementedException($"Unknown size {Size}"); }
             }
         }
         /* 
@@ -57,31 +58,21 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Public method to return the list of instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override  List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
         /* 
         private variable that holds the size 
         */
-        private Enum OrderSize = Size.Small;
-        /// <summary>
-        /// Public method to return or set the size of the item
-        /// </summary>
-        public Enum orderSize
-        {
-            get { return OrderSize; }
-            set
-            {
-                OrderSize = value;
-            }
-        }
+        private Size OrderSize = Size.Small;
+        
         /// <summary>
         /// Override Method to return the item size and item name 
         /// </summary>
         public override string ToString()
         {
-            return ($"{OrderSize} Dragonborn Waffle Fries");
+            return ($"{Size} Dragonborn Waffle Fries");
         }
     }
 }
