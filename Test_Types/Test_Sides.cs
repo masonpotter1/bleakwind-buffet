@@ -2,6 +2,7 @@
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using Data;
 using System;
 using Xunit;
 
@@ -133,6 +134,38 @@ namespace Test_Types
 
         }
 
+        /// <summary>
+        /// tests to insure all items inherate the Side class
+        /// </summary>
+        [Fact]
+        public void ShouldBeSide()
+        {
+            DragonbornWaffleFries db = new DragonbornWaffleFries();
+            FriedMiraak fm = new FriedMiraak();
+            MadOtarGrits mo = new MadOtarGrits();
+            VokunSalad vs = new VokunSalad();
+
+            Assert.IsAssignableFrom<Side>(db);
+            Assert.IsAssignableFrom<Side>(fm);
+            Assert.IsAssignableFrom<Side>(mo);
+            Assert.IsAssignableFrom<Side>(vs);
+        }
+        /// <summary>
+        /// tests to make sure items can be an IOrderItem
+        /// </summary>
+        [Fact]
+        public void CanBeIroderSide()
+        {
+            DragonbornWaffleFries db = new DragonbornWaffleFries();
+            FriedMiraak fm = new FriedMiraak();
+            MadOtarGrits mo = new MadOtarGrits();
+            VokunSalad vs = new VokunSalad();
+
+            Assert.IsAssignableFrom<IOrderItem>(db);
+            Assert.IsAssignableFrom<IOrderItem>(fm);
+            Assert.IsAssignableFrom<IOrderItem>(mo);
+            Assert.IsAssignableFrom<IOrderItem>(vs);
+        }
 
 
 

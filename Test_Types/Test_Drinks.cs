@@ -1,6 +1,7 @@
 ﻿using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using Data;
 using System;
 using Xunit;
 
@@ -187,6 +188,43 @@ namespace Test_Types
         {
             var side = new WarriorWater();
             Assert.Equal("Small Warrior Water", side.ToString());
+        }
+        /// <summary>
+        /// These tests insure all drinks inherate the Drinks class
+        /// </summary>
+        [Fact]
+        public void ShouldAllBeDrinks()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            CandlehearthCoffee cf = new CandlehearthCoffee();
+            MarkarthMilk mk = new MarkarthMilk();
+            SailorSoda sd = new SailorSoda();
+            WarriorWater wd = new WarriorWater();
+
+            Assert.IsAssignableFrom<Drinks>(aj);
+            Assert.IsAssignableFrom<Drinks>(cf);
+            Assert.IsAssignableFrom<Drinks>(mk);
+            Assert.IsAssignableFrom<Drinks>(sd);
+            Assert.IsAssignableFrom<Drinks>(wd);
+        }
+
+        /// <summary>
+        /// Makes sure all drinks can be an IOrderItem
+        /// </summary>
+        [Fact]
+        public void CanBeIOrderItem()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            CandlehearthCoffee cf = new CandlehearthCoffee();
+            MarkarthMilk mk = new MarkarthMilk();
+            SailorSoda sd = new SailorSoda();
+            WarriorWater wd = new WarriorWater();
+
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+            Assert.IsAssignableFrom<IOrderItem>(cf);
+            Assert.IsAssignableFrom<IOrderItem>(mk);
+            Assert.IsAssignableFrom<IOrderItem>(sd);
+            Assert.IsAssignableFrom<IOrderItem>(wd);
         }
     }
 }

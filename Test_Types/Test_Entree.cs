@@ -1,4 +1,5 @@
-using BleakwindBuffet.Data.Entrees;
+﻿using BleakwindBuffet.Data.Entrees;
+using Data;
 using System;
 using Xunit;
 
@@ -216,5 +217,45 @@ namespace Test_Types
             Assert.Equal("Smokehouse Skeleton", side.ToString());
         }
 
+        /// <summary>
+        /// Tests to make sure all entrees are inharented to the "Entree" class
+        /// </summary>
+        [Fact]
+        public void ShouldBeEntree()
+        {
+            BriarheartBurger br = new BriarheartBurger();
+            DoubleDraugr dd = new DoubleDraugr();
+            GardenOrcOmelette oo = new GardenOrcOmelette();
+            PhillyPoacher ph = new PhillyPoacher();
+            ThalmorTriple tt = new ThalmorTriple();
+            ThugsTBone tb = new ThugsTBone();
+
+            Assert.IsAssignableFrom<Entree>(br);
+            Assert.IsAssignableFrom<Entree>(dd);
+            Assert.IsAssignableFrom<Entree>(oo);
+            Assert.IsAssignableFrom<Entree>(ph);
+            Assert.IsAssignableFrom<Entree>(tt);
+            Assert.IsAssignableFrom<Entree>(tb);
+        }
+        /// <summary>
+        /// Tests to make sure items can be an IOrderItem
+        /// </summary>
+        [Fact]
+        public void CanBeIOrderItem()
+        {
+            BriarheartBurger br = new BriarheartBurger();
+            DoubleDraugr dd = new DoubleDraugr();
+            GardenOrcOmelette oo = new GardenOrcOmelette();
+            PhillyPoacher ph = new PhillyPoacher();
+            ThalmorTriple tt = new ThalmorTriple();
+            ThugsTBone tb = new ThugsTBone();
+
+            Assert.IsAssignableFrom<IOrderItem>(br);
+            Assert.IsAssignableFrom<IOrderItem>(dd);
+            Assert.IsAssignableFrom<IOrderItem>(oo);
+            Assert.IsAssignableFrom<IOrderItem>(ph);
+            Assert.IsAssignableFrom<IOrderItem>(tt);
+            Assert.IsAssignableFrom<IOrderItem>(tb);
+        }
     }
 }
