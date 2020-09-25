@@ -1,0 +1,44 @@
+﻿<Window x:Class="PointOfSale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSale"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="324"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="550"/>
+            <RowDefinition Height="218"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2"/>
+
+        <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Center" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black"/>
+        <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
+        <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
+        <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
+        <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button x:Name="Button_Remove" Content="Remove" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="23,9,0,0" Grid.Row="1" Text="Current Item Being worked on" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="26" FontWeight="Bold"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" Margin="0,10,0,0" Text="Running Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
+            <TextBox.TextDecorations>
+                <TextDecoration/>
+            </TextBox.TextDecorations>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Center" Text="Drinks" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,10,0,0"/>
+        <Button x:Name="Button_Soda" Content="Salor Soda" HorizontalAlignment="Left" Margin="42,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="Button_Milk" Content="Markath Milk" HorizontalAlignment="Left" Margin="42,113,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="Button_Aj" Content="Aretino Apple Juice"  HorizontalAlignment="Left" Margin="175,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="Button_Water" Content="Warrior Water"  HorizontalAlignment="Left" Margin="175,113,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="Button_Milk_Copy" Content="CandleHearth Coffee" HorizontalAlignment="Left" Margin="42,179,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        <Button x:Name="Button_Milk_Copy1" Content="Markath Milk" HorizontalAlignment="Left" Margin="175,179,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
+        
+
+    </Grid>
+</Window>
