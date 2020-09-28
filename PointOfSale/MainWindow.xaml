@@ -19,26 +19,75 @@
         </Grid.RowDefinitions>
         <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2"/>
 
-        <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Center" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black"/>
+        <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,244,0,0"/>
         <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
         <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
         <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
         <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
-        <Button x:Name="Button_Remove" Content="Remove" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="23,9,0,0" Grid.Row="1" Text="Current Item Being worked on" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="26" FontWeight="Bold"/>
+        <Button x:Name="Button_Remove" Content="Remove/Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Margin="0,10,0,0" Text="Running Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
             <TextBox.TextDecorations>
                 <TextDecoration/>
             </TextBox.TextDecorations>
         </TextBox>
         <TextBlock HorizontalAlignment="Center" Text="Drinks" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,10,0,0"/>
-        <Button x:Name="Button_Soda" Content="Salor Soda" HorizontalAlignment="Left" Margin="42,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        <Button x:Name="Button_Milk" Content="Markath Milk" HorizontalAlignment="Left" Margin="42,113,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        <Button x:Name="Button_Aj" Content="Aretino Apple Juice"  HorizontalAlignment="Left" Margin="175,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        <Button x:Name="Button_Water" Content="Warrior Water"  HorizontalAlignment="Left" Margin="175,113,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        <Button x:Name="Button_Milk_Copy" Content="CandleHearth Coffee" HorizontalAlignment="Left" Margin="42,179,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        <Button x:Name="Button_Milk_Copy1" Content="Markath Milk" HorizontalAlignment="Left" Margin="175,179,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial"/>
-        
+        <Button x:Name="Button_Soda" Content="Salor Soda" HorizontalAlignment="Left" Margin="17,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Soda_Click"/>
+        <Button x:Name="Button_Milk" Content="Markath Milk" HorizontalAlignment="Left" Margin="17,108,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Milk_Click"/>
+        <Button x:Name="Button_Aj" Content="Aretino Apple Juice"  HorizontalAlignment="Left" Margin="200,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Aj_Click"/>
+        <Button x:Name="Button_Water" Content="Warrior Water"  HorizontalAlignment="Left" Margin="200,108,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Water_Click"/>
+        <Button x:Name="Button_CandleHearth_Coffee" Content="CandleHearth Coffee" HorizontalAlignment="Left" Margin="17,169,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Coffee"/>
+        <CheckBox x:Name="SodaF1" Content="Blackberry" Grid.Column="1" HorizontalAlignment="Left" Margin="23,31,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Checked="SodaF1_Checked_1"/>
+        <TextBlock HorizontalAlignment="Left" Text="Comes With:" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontSize="18" FontWeight="Bold" Height="20" FontFamily="Cooper Black" Grid.Column="1" Margin="10,549,0,0" Grid.RowSpan="2"/>
+        <Button x:Name="Button_MadOtarGrits" Content="Mad Otar Grits" HorizontalAlignment="Left" Margin="17,285,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_MadOtarGrits_Click"/>
+        <Button x:Name="Button_DragonWaffleFries" Content="Dragonborn Waffle Fries" HorizontalAlignment="Left" Margin="200,285,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_DragonWaffleFries_Click" />
+        <Button x:Name="Button_Vokun_Salad" Content="Vokun Salad" HorizontalAlignment="Left" Margin="17,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Vokun_Salad_Click"/>
+        <Button x:Name="Button_Fried_Miraak" Content="Fried Miraak" HorizontalAlignment="Left" Margin="200,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Fried_Miraak_Click"/>
+        <CheckBox x:Name="SodaF2" Visibility="Hidden" Content="Cherry" Grid.Column="1" HorizontalAlignment="Left" Margin="23,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF2_Checked"/>
+        <CheckBox x:Name="SodaF3" Visibility="Hidden" Content="Grapefruit" Grid.Column="1" HorizontalAlignment="Left" Margin="23,71,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF3_Checked"/>
+        <CheckBox x:Name="SodaF4" Visibility="Hidden" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF4_Checked"/>
+        <CheckBox x:Name="SodaF5" Visibility="Hidden" Content="Peach" Grid.Column="1" HorizontalAlignment="Left" Margin="23,111,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF5_Checked"/>
+        <CheckBox x:Name="SodaF6" Visibility="Hidden" Content="Watermelon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,131,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF6_Checked"/>
+        <CheckBox x:Name="DrinkIce" Visibility="Hidden" Content="Ice" Grid.Column="1" HorizontalAlignment="Left" Margin="175,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="check_RoomForCream" Content="Room for Cream" Grid.Column="1" HorizontalAlignment="Left" Margin="24,30,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Decaf" Content="Make Decaf" Grid.Column="1" HorizontalAlignment="Left" Margin="24,51,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Lemon" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="15,30,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
+
+        <Button x:Name="Button_Briarheart_Burger" Content="Briarheart Burger" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Briarheart_Burger_Click" />
+        <Button x:Name="Button_Double_Draughr" Content="Double Draughr" HorizontalAlignment="Left" Margin="207,48,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Double_Draughr_Click" />
+        <Button x:Name="Button_Thalmor_Triple" Content="Thalmor Triple" HorizontalAlignment="Left" Margin="11,108,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Thalmor_Triple_Click" />
+        <Button x:Name="Button_SmokeHouse_Skeleton" Content="Smokehouse Skeleton" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_SmokeHouse_Skeleton_Click" />
+        <Button x:Name="Button_Garden_Orc_Omelette" Content="Garden Orc Omelette" HorizontalAlignment="Left" Margin="207,230,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Garden_Orc_Omelette_Click" />
+        <Button x:Name="Button_Philly_Poacher" Content="Philly Poacher" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Philly_Poacher_Click" />
+        <Button x:Name="Button_Thugs_T_Bone" Content="Thugs T-Bone" HorizontalAlignment="Left" Margin="207,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Thugs_T_Bone_Click" />
+
+        <TextBlock HorizontalAlignment="Center" Text="Burgers" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,7,0,0" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Center" Text="Entrees" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,189,0,0" Grid.Column="1"/>
+        <CheckBox x:Name="Check_Bun" Content="Bun" Grid.Column="1" HorizontalAlignment="Left" Margin="11,36,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Ketchup" Content="Ketchup" Grid.Column="1" HorizontalAlignment="Left" Margin="11,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mustard" Content="Mustard" Grid.Column="1" HorizontalAlignment="Left" Margin="11,82,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Pickle" Content="Pickle" Grid.Column="1" HorizontalAlignment="Left" Margin="126,38,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Cheese" Content="Cheese" Grid.Column="1" HorizontalAlignment="Left" Margin="126,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_tomato" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="126,83,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Lettuce" Content="Lettuce" Grid.Column="1" HorizontalAlignment="Left" Margin="11,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mayo" Content="Mayo" Grid.Column="1" HorizontalAlignment="Left" Margin="126,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Bacon" Content="Bacon" Grid.Column="1" HorizontalAlignment="Left" Margin="11,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Egg" Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="126,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Sausage_Link" Content="Sausage Link" Grid.Column="1" HorizontalAlignment="Left" Margin="13,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Egg_Skelly" Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="151,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_HashBrowns" Content="Hashbrowns" Grid.Column="1" HorizontalAlignment="Left" Margin="13,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Pancakes" Content="Pancakes" Grid.Column="1" HorizontalAlignment="Left" Margin="151,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Broccoli" Content="Broccoi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mushrooms" Content="Mushrooms" Grid.Column="1" HorizontalAlignment="Left" Margin="146,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Tomato_Omelette" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="20,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Cheddar" Content="Cheddar" Grid.Column="1" HorizontalAlignment="Left" Margin="146,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Sirloin" Content="Sirloin" Grid.Column="1" HorizontalAlignment="Left" Margin="13,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Onion" Content="Onion" Grid.Column="1" HorizontalAlignment="Left" Margin="131,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Roll" Content="Roll" Grid.Column="1" HorizontalAlignment="Left" Margin="13,71,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <Border BorderThickness="1,1,1,0" BorderBrush="Black"/>
+        <Border BorderThickness="1,0,1,1" BorderBrush="Black" Grid.Row="1"/>
+        <Border BorderThickness="0,1,1,1" BorderBrush="Black" Grid.Column="1" Grid.Row="1"/>
+        <Border BorderThickness="0,1,0,0" BorderBrush="Black" Grid.Column="1"/>
+
 
     </Grid>
 </Window>
