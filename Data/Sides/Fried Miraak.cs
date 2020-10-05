@@ -10,6 +10,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
@@ -18,6 +19,7 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class FriedMiraak : Side
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the prices of the various sizes
         /// </summary>

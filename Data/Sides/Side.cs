@@ -3,11 +3,13 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
     public abstract class Side : IOrderItem
     {
+        public virtual event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// the Size of the Side 
         /// </summary>

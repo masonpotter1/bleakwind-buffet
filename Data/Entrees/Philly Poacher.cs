@@ -8,6 +8,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -16,6 +17,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
     public class PhillyPoacher : Entree
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item
         /// </summary>
@@ -61,6 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold sirloin");
                 else { specialInstructions.Remove("Hold sirloin"); }
                 Sirloin = value;
+                OnPropertyChanged("Hold sirloin");
             }
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold onion");
                 else { specialInstructions.Remove("Hold onion"); }
                 Onion = value;
+                OnPropertyChanged("Hold onion");
             }
         }
 
@@ -98,6 +102,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold roll");
                 else { specialInstructions.Remove("Hold roll"); }
                 Roll = value;
+                OnPropertyChanged("Hold roll");
             }
         }
         /// <summary>
@@ -107,7 +112,15 @@ namespace BleakwindBuffet.Data.Entrees
         {
             return ("Philly Poacher");
         }
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
+        }
     }
 }
 

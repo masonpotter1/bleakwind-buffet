@@ -1,4 +1,6 @@
 ﻿using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 using Data;
 using System;
 using System.Collections.Generic;
@@ -22,10 +24,10 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        IOrderItem Order;
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>
@@ -35,15 +37,18 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Button_Soda_Click(object sender, RoutedEventArgs e)
         {
-            Order = new SailorSoda(); 
+          
             SodaF1.Visibility = Visibility.Visible;
             SodaF2.Visibility = Visibility.Visible;
+            SodaF2.IsChecked = true;
             SodaF3.Visibility = Visibility.Visible;
             SodaF4.Visibility = Visibility.Visible;
             SodaF5.Visibility = Visibility.Visible;
             SodaF6.Visibility = Visibility.Visible;
             DrinkIce.Visibility = Visibility.Visible;
             DrinkIce.IsChecked = true;
+
+            
         }
 
         /// <summary>
@@ -53,37 +58,36 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void SodaF2_Checked(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
             SodaF1.IsChecked = false; SodaF3.IsChecked = false; SodaF4.IsChecked = false; SodaF5.IsChecked = false; SodaF6.IsChecked = false;
         }
 
         private void SodaF3_Checked(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
+           
             SodaF2.IsChecked = false; SodaF1.IsChecked = false; SodaF4.IsChecked = false; SodaF5.IsChecked = false; SodaF6.IsChecked = false;
         }
 
         private void SodaF4_Checked(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
+            
             SodaF2.IsChecked = false; SodaF3.IsChecked = false; SodaF1.IsChecked = false; SodaF5.IsChecked = false; SodaF6.IsChecked = false;
         }
 
         private void SodaF5_Checked(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
+            
             SodaF2.IsChecked = false; SodaF3.IsChecked = false; SodaF4.IsChecked = false; SodaF1.IsChecked = false; SodaF6.IsChecked = false;
         }
 
         private void SodaF6_Checked(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
+            
             SodaF2.IsChecked = false; SodaF3.IsChecked = false; SodaF4.IsChecked = false; SodaF5.IsChecked = false; SodaF1.IsChecked = false;
         }
 
         private void SodaF1_Checked_1(object sender, RoutedEventArgs e)
         {
-            allButtonsFalse();
+        
             SodaF2.IsChecked = false; SodaF3.IsChecked = false; SodaF4.IsChecked = false; SodaF5.IsChecked = false; SodaF6.IsChecked = false;
         } // end of soda flavors
 
@@ -177,7 +181,7 @@ namespace PointOfSale
         private void Button_MadOtarGrits_Click(object sender, RoutedEventArgs e)
         {
             allButtonsFalse();
-
+            
         }
 
         private void Button_DragonWaffleFries_Click(object sender, RoutedEventArgs e)
@@ -268,7 +272,142 @@ namespace PointOfSale
         private void Button_Thugs_T_Bone_Click(object sender, RoutedEventArgs e)
         {
             allButtonsFalse();
+            
+        }
+
+        private void Button_Small_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Small.Opacity = 100;
+            Button_Medium.Opacity = .50;
+            Button_Large.Opacity = .50;
+        }
+
+        private void Button_Medium_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Medium.Opacity = 100;
+            Button_Small.Opacity = .50;
+            Button_Large.Opacity = .50;
+        }
+
+        private void Button_Large_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Large.Opacity = 1.00;
+            Button_Medium.Opacity = .50;
+            Button_Small.Opacity = .50;
+        }
+
+
+        private void Checked_Bun(object sender, RoutedEventArgs e)
+        {
+
 
         }
+        private void Checked_Cheese(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Ketchup(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Mustard(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Pickle(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Lettuce(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Mayo(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_tomato(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Bacon(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Egg(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+
+        private void Checked_Egg_Skelly(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_HashBrowns(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Sausage(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Pancakes(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Broccoli(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Cheddar(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Tomato_Omelette(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Mushrooms(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Onion(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Sirloin(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+        private void Checked_Roll(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+
+
     }
+
 }

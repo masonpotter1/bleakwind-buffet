@@ -8,6 +8,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
         /// <summary>
@@ -16,6 +17,7 @@ namespace BleakwindBuffet.Data.Entrees
 {
     public class DoubleDraugr : Entree
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item
         /// </summary>
@@ -60,6 +62,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold bun");
                 else { specialInstructions.Remove("Hold bun"); }
                 Bun = value;
+                OnPropertyChanged("Hold bun");
             }
         }
         /// <summary>
@@ -78,6 +81,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold ketchup");
                 else { specialInstructions.Remove("Hold ketchup"); }
                 Ketchup = value;
+                OnPropertyChanged("Hold ketchup");
             }
         }
 
@@ -97,6 +101,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold mustard");
                 else { specialInstructions.Remove("Hold mustard"); }
                 Mustard = value;
+                OnPropertyChanged("Hold mustard");
             }
         }
 
@@ -116,6 +121,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold pickle");
                 else { specialInstructions.Remove("Hold pickle"); }
                 Pickle = value;
+                OnPropertyChanged("Hold pickle");
             }
         }
 
@@ -135,6 +141,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold cheese");
                 else { specialInstructions.Remove("Hold cheese"); }
                 Cheese = value;
+                OnPropertyChanged("Hold cheese");
             }
         }
         /// <summary>
@@ -153,6 +160,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold tomato");
                 else { specialInstructions.Remove("Hold tomato"); }
                 Tomato = value;
+                OnPropertyChanged("Hold tomato");
             }
         }
 
@@ -172,6 +180,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold lettuce");
                 else { specialInstructions.Remove("Hold lettuce"); }
                 Lettuce = value;
+                OnPropertyChanged("Hold lettuce");
             }
         }
 
@@ -191,6 +200,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold mayo");
                 else { specialInstructions.Remove("Hold mayo"); }
                 Mayo = value;
+                OnPropertyChanged("Hold mayo");
             }
         }
         /// <summary>
@@ -199,6 +209,16 @@ namespace BleakwindBuffet.Data.Entrees
         public override string ToString()
         {
             return ("Double Draugr");
+        }
+
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

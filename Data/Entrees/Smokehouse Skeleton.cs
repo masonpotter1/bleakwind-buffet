@@ -8,6 +8,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -16,6 +17,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
     public class SmokehouseSkeleton : Entree
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item
         /// </summary>
@@ -61,6 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold sausage");
                 else { specialInstructions.Remove("Hold sausage"); }
                 SausageLink = value;
+                OnPropertyChanged("Hold sausage");
             }
         }
         /// <summary>
@@ -76,9 +79,10 @@ namespace BleakwindBuffet.Data.Entrees
             get { return HashBrowns; }
             set
             {
-                if (!value) specialInstructions.Add("Hold hashBrowns");
-                else { specialInstructions.Remove("Hold hashBrowns"); }
+                if (!value) specialInstructions.Add("Hold HashBrowns");
+                else { specialInstructions.Remove("Hold HashBrowns"); }
                 HashBrowns = value;
+                OnPropertyChanged("Hold HashBrowns");
             }
         }
 
@@ -98,6 +102,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold pancake");
                 else { specialInstructions.Remove("Hold pancake"); }
                 Pancake = value;
+                OnPropertyChanged("Hold pancake");
             }
         }
 
@@ -117,6 +122,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold eggs");
                 else { specialInstructions.Remove("Hold eggs"); }
                 Egg = value;
+                OnPropertyChanged("Hold eggs");
             }
         }
         /// <summary>
@@ -125,6 +131,15 @@ namespace BleakwindBuffet.Data.Entrees
         public override string ToString()
         {
             return ("Smokehouse Skeleton");
+        }
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

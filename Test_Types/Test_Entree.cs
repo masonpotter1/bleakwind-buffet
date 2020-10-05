@@ -2,6 +2,8 @@
 using Data;
 using System;
 using Xunit;
+using System.ComponentModel;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Test_Types
 {
@@ -256,6 +258,327 @@ namespace Test_Types
             Assert.IsAssignableFrom<IOrderItem>(ph);
             Assert.IsAssignableFrom<IOrderItem>(tt);
             Assert.IsAssignableFrom<IOrderItem>(tb);
+        }
+        [Fact]
+        public void INotifyPropertyChanged()
+        {
+            BriarheartBurger br = new BriarheartBurger();
+            DoubleDraugr dd = new DoubleDraugr();
+            GardenOrcOmelette oo = new GardenOrcOmelette();
+            PhillyPoacher ph = new PhillyPoacher();
+            ThalmorTriple tt = new ThalmorTriple();
+            ThugsTBone tb = new ThugsTBone();
+
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(br);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(oo);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ph);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tb);
+        }
+
+        /// <summary>
+        /// toppings test for all burgers 
+        /// </summary>
+        [Fact]
+        public void BurgerToppingTest()
+        {
+            var sb = new BriarheartBurger();
+            var db = new DoubleDraugr();
+            var tb = new ThalmorTriple();
+            Assert.PropertyChanged(sb, "Hold bun", () =>
+            {
+                sb.bun = false;
+            });
+            Assert.PropertyChanged(sb, "Hold bun", () =>
+            {
+                sb.bun = true;
+            });
+
+            Assert.PropertyChanged(sb, "Hold ketchup", () =>
+            {
+                sb.ketchup = false;
+            });
+            Assert.PropertyChanged(sb, "Hold ketchup", () =>
+            {
+                sb.ketchup = true;
+            });
+
+            Assert.PropertyChanged(sb, "Hold mustard", () =>
+            {
+                sb.mustard = false;
+            });
+            Assert.PropertyChanged(sb, "Hold mustard", () =>
+            {
+                sb.mustard = true;
+            });
+
+            Assert.PropertyChanged(sb, "Hold pickle", () =>
+            {
+                sb.pickle = false;
+            });
+            Assert.PropertyChanged(sb, "Hold pickle", () =>
+            {
+                sb.pickle = true;
+            });
+            Assert.PropertyChanged(sb, "Hold cheese", () =>
+            {
+                sb.cheese = false;
+            });
+            Assert.PropertyChanged(sb, "Hold cheese", () =>
+            {
+                sb.cheese = true;
+            });
+
+            // double 
+            Assert.PropertyChanged(db, "Hold bun", () =>
+            {
+                db.bun = false;
+            });
+            Assert.PropertyChanged(db, "Hold bun", () =>
+            {
+                db.bun = true;
+            });
+
+            Assert.PropertyChanged(db, "Hold ketchup", () =>
+            {
+                db.ketchup = false;
+            });
+            Assert.PropertyChanged(db, "Hold ketchup", () =>
+            {
+                db.ketchup = true;
+            });
+
+            Assert.PropertyChanged(db, "Hold mustard", () =>
+            {
+                db.mustard = false;
+            });
+            Assert.PropertyChanged(db, "Hold mustard", () =>
+            {
+                db.mustard = true;
+            });
+            Assert.PropertyChanged(db, "Hold pickle", () =>
+            {
+                db.pickle = false;
+            });
+            Assert.PropertyChanged(db, "Hold pickle", () =>
+            {
+                db.pickle = true;
+            });
+            Assert.PropertyChanged(db, "Hold cheese", () =>
+            {
+                db.cheese = false;
+            });
+            Assert.PropertyChanged(db, "Hold cheese", () =>
+            {
+                db.cheese = true;
+            });
+            Assert.PropertyChanged(db, "Hold tomato", () =>
+            {
+                db.tomato = false;
+            });
+            Assert.PropertyChanged(db, "Hold tomato", () =>
+            {
+                db.tomato = true;
+            });
+            Assert.PropertyChanged(db, "Hold lettuce", () =>
+            {
+                db.lettuce = false;
+            });
+            Assert.PropertyChanged(db, "Hold lettuce", () =>
+            {
+                db.lettuce = true;
+            });
+            Assert.PropertyChanged(db, "Hold mayo", () =>
+            {
+                db.mayo = false;
+            });
+            Assert.PropertyChanged(db, "Hold mayo", () =>
+            {
+                db.mayo = true;
+            });
+
+            // tripple burger 
+
+            Assert.PropertyChanged(tb, "Hold bun", () =>
+            {
+                tb.bun = false;
+            });
+            Assert.PropertyChanged(tb, "Hold bun", () =>
+            {
+                tb.bun = true;
+            });
+
+            Assert.PropertyChanged(tb, "Hold ketchup", () =>
+            {
+                tb.ketchup = false;
+            });
+            Assert.PropertyChanged(tb, "Hold ketchup", () =>
+            {
+                tb.ketchup = true;
+            });
+
+            Assert.PropertyChanged(tb, "Hold mustard", () =>
+            {
+                tb.mustard = false;
+            });
+            Assert.PropertyChanged(tb, "Hold mustard", () =>
+            {
+                tb.mustard = true;
+            });
+            Assert.PropertyChanged(tb, "Hold pickle", () =>
+            {
+                tb.pickle = false;
+            });
+            Assert.PropertyChanged(tb, "Hold pickle", () =>
+            {
+                tb.pickle = true;
+            });
+            Assert.PropertyChanged(tb, "Hold cheese", () =>
+            {
+                tb.cheese = false;
+            });
+            Assert.PropertyChanged(tb, "Hold cheese", () =>
+            {
+                tb.cheese = true;
+            });
+            Assert.PropertyChanged(tb, "Hold tomato", () =>
+            {
+                tb.tomato = false;
+            });
+            Assert.PropertyChanged(tb, "Hold tomato", () =>
+            {
+                tb.tomato = true;
+            });
+            Assert.PropertyChanged(tb, "Hold lettuce", () =>
+            {
+                tb.lettuce = false;
+            });
+            Assert.PropertyChanged(tb, "Hold lettuce", () =>
+            {
+                tb.lettuce = true;
+            });
+            Assert.PropertyChanged(tb, "Hold mayo", () =>
+            {
+                tb.mayo = false;
+            });
+            Assert.PropertyChanged(tb, "Hold mayo", () =>
+            {
+                tb.mayo = true;
+            });
+            Assert.PropertyChanged(tb, "Hold bacon", () =>
+            {
+                tb.bacon = false;
+            });
+            Assert.PropertyChanged(tb, "Hold bacon", () =>
+            {
+                tb.bacon = true;
+            });
+            Assert.PropertyChanged(tb, "Hold egg", () =>
+            {
+                tb.egg = false;
+            });
+            Assert.PropertyChanged(tb, "Hold egg", () =>
+            {
+                tb.egg = true;
+            });
+
+
+        }
+
+        [Fact]
+        public void NonBurgerToppings()
+        {
+            var go = new GardenOrcOmelette();
+            var pp = new PhillyPoacher();
+            var ss = new SmokehouseSkeleton();
+            var tb = new ThugsTBone();
+
+            Assert.PropertyChanged(ss, "Hold eggs", () =>
+            {
+                ss.egg = false;
+            });
+            Assert.PropertyChanged(ss, "Hold eggs", () =>
+            {
+                ss.egg = true;
+            });
+            Assert.PropertyChanged(ss, "Hold HashBrowns", () =>
+            {
+                ss.hashBrowns = false;
+            });
+            Assert.PropertyChanged(ss, "Hold HashBrowns", () =>
+            {
+                ss.hashBrowns = true;
+            });
+            Assert.PropertyChanged(ss, "Hold pancake", () =>
+            {
+                ss.pancake = false;
+            });
+            Assert.PropertyChanged(ss, "Hold pancake", () =>
+            {
+                ss.pancake = true;
+            });
+            Assert.PropertyChanged(ss, "Hold sausage", () =>
+            {
+                ss.sausageLink = false;
+            });
+            Assert.PropertyChanged(ss, "Hold sausage", () =>
+            {
+                ss.sausageLink = true;
+            });
+
+            //philly 
+            Assert.PropertyChanged(pp, "Hold onion", () =>
+            {
+                pp.onion = false;
+            });
+            Assert.PropertyChanged(pp, "Hold onion", () =>
+            {
+                pp.onion = true;
+            });
+            Assert.PropertyChanged(pp, "Hold sirloin", () =>
+            {
+                pp.sirloin = false;
+            });
+            Assert.PropertyChanged(pp, "Hold sirloin", () =>
+            {
+                pp.sirloin = true;
+            });
+            Assert.PropertyChanged(pp, "Hold roll", () =>
+            {
+                pp.roll = false;
+            });
+            Assert.PropertyChanged(pp, "Hold roll", () =>
+            {
+                pp.roll = true;
+            });
+
+            //Omelette
+            Assert.PropertyChanged(go, "Hold broccoli", () =>
+            {
+                go.broccoli = false;
+            });
+            Assert.PropertyChanged(go, "Hold broccoli", () =>
+            {
+                go.broccoli = true;
+            });
+            Assert.PropertyChanged(go, "Hold mushrooms", () =>
+            {
+                go.mushrooms = false;
+            });
+            Assert.PropertyChanged(go, "Hold mushrooms", () =>
+            {
+                go.mushrooms = true;
+            });
+            Assert.PropertyChanged(go, "Hold cheddar", () =>
+            {
+                go.cheddar = false;
+            });
+            Assert.PropertyChanged(go, "Hold cheddar", () =>
+            {
+                go.cheddar = true;
+            });
+
         }
     }
 }

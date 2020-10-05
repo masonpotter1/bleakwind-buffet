@@ -10,6 +10,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
@@ -18,6 +19,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class WarriorWater : Drinks
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the prices of the various sizes
         /// </summary>
@@ -86,6 +88,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Hold ice");
                 else { specialInstructions.Remove("Hold ice"); }
                 Ice = value;
+                OnPropertyChanged("Hold ice");
             }
         }
         /*
@@ -105,6 +108,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Add lemon");
                 else { specialInstructions.Remove("Add lemon"); }
                 Lemon = value;
+                OnPropertyChanged("Add lemon");
             }
         }
         /// <summary>
@@ -113,6 +117,16 @@ namespace BleakwindBuffet.Data.Drinks
         public override string ToString()
         {
             return ($"{Size} Warrior Water");
+        }
+
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

@@ -8,6 +8,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -15,9 +16,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// A class representing an order of the Thug's T-Bone 
         /// </summary>
     public class ThugsTBone : Entree
-    {        /// <summary>
-             /// gets the price of the Item
-             /// </summary>
+    {
+        public override event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// gets the price of the Item
+        /// </summary>
         public override double Price
         {
             get { return 6.44; }
@@ -48,6 +51,16 @@ namespace BleakwindBuffet.Data.Entrees
         public override string ToString()
         {
             return ("Thugs T-Bone");
+        }
+
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

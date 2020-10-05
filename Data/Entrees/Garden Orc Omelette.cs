@@ -8,6 +8,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -16,6 +17,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
     public class GardenOrcOmelette : Entree
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item
         /// </summary>
@@ -61,6 +63,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold broccoli");
                 else { specialInstructions.Remove("Hold broccoli"); }
                 Broccoli = value;
+                OnPropertyChanged("Hold broccoli");
             }
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold mushrooms");
                 else { specialInstructions.Remove("Hold mushrooms"); }
                 Mushrooms = value;
+                OnPropertyChanged("Hold mushrooms");
             }
         }
 
@@ -98,6 +102,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold tomato");
                 else { specialInstructions.Remove("Hold tomato"); }
                 Tomato = value;
+                OnPropertyChanged("Hold tomato");
             }
         }
 
@@ -117,6 +122,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value) specialInstructions.Add("Hold cheddar");
                 else { specialInstructions.Remove("Hold cheddar"); }
                 Cheddar = value;
+                OnPropertyChanged("Hold cheddar");
             }
         }
         /// <summary>
@@ -125,6 +131,16 @@ namespace BleakwindBuffet.Data.Entrees
         public override string ToString()
         {
             return ("Garden Orc Omelette");
+        }
+
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }

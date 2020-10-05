@@ -9,6 +9,7 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
@@ -17,6 +18,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class CandlehearthCoffee : Drinks
     {
+        public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the prices of the various sizes
         /// </summary>
@@ -80,6 +82,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Add ice");
                 else { specialInstructions.Remove("Add ice"); }
                 Ice = value;
+                OnPropertyChanged("Ice");
             }
         }
         /*
@@ -98,6 +101,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Add cream");
                 else { specialInstructions.Remove("Add cream"); }
                 RoomForCream = value;
+                OnPropertyChanged("Cream");
             }
         }
         /*
@@ -116,6 +120,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value) specialInstructions.Add("Decaf ");
                 else { specialInstructions.Remove("Decaf "); }
                 Decaf = value;
+                OnPropertyChanged("Decaf");
             }
         }
         /// <summary>
@@ -128,6 +133,15 @@ namespace BleakwindBuffet.Data.Drinks
                 return ($"{Size} Candlehearth Coffee");
             }
             else { return ($"{Size} Decaf Candlehearth Coffee"); }
+        }
+        /// <summary>
+        /// The Property that was changes - creates a new changed event.
+        /// </summary>
+        /// <param name="name"></param>
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
 
     }

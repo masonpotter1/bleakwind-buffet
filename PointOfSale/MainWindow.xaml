@@ -20,9 +20,9 @@
         <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2"/>
 
         <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,244,0,0"/>
-        <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
-        <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
-        <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493"/>
+        <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Small_Click"/>
+        <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Medium_Click"/>
+        <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Large_Click"/>
         <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
         <Button x:Name="Button_Remove" Content="Remove/Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Margin="0,10,0,0" Text="Running Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
@@ -42,6 +42,7 @@
         <Button x:Name="Button_DragonWaffleFries" Content="Dragonborn Waffle Fries" HorizontalAlignment="Left" Margin="200,285,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_DragonWaffleFries_Click" />
         <Button x:Name="Button_Vokun_Salad" Content="Vokun Salad" HorizontalAlignment="Left" Margin="17,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Vokun_Salad_Click"/>
         <Button x:Name="Button_Fried_Miraak" Content="Fried Miraak" HorizontalAlignment="Left" Margin="200,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Fried_Miraak_Click"/>
+        
         <CheckBox x:Name="SodaF2" Visibility="Hidden" Content="Cherry" Grid.Column="1" HorizontalAlignment="Left" Margin="23,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF2_Checked"/>
         <CheckBox x:Name="SodaF3" Visibility="Hidden" Content="Grapefruit" Grid.Column="1" HorizontalAlignment="Left" Margin="23,71,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF3_Checked"/>
         <CheckBox x:Name="SodaF4" Visibility="Hidden" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF4_Checked"/>
@@ -62,27 +63,28 @@
 
         <TextBlock HorizontalAlignment="Center" Text="Burgers" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,7,0,0" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" Text="Entrees" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,189,0,0" Grid.Column="1"/>
-        <CheckBox x:Name="Check_Bun" Content="Bun" Grid.Column="1" HorizontalAlignment="Left" Margin="11,36,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Ketchup" Content="Ketchup" Grid.Column="1" HorizontalAlignment="Left" Margin="11,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Mustard" Content="Mustard" Grid.Column="1" HorizontalAlignment="Left" Margin="11,82,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Pickle" Content="Pickle" Grid.Column="1" HorizontalAlignment="Left" Margin="126,38,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Cheese" Content="Cheese" Grid.Column="1" HorizontalAlignment="Left" Margin="126,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_tomato" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="126,83,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Lettuce" Content="Lettuce" Grid.Column="1" HorizontalAlignment="Left" Margin="11,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Mayo" Content="Mayo" Grid.Column="1" HorizontalAlignment="Left" Margin="126,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Bacon" Content="Bacon" Grid.Column="1" HorizontalAlignment="Left" Margin="11,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Egg" Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="126,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Sausage_Link" Content="Sausage Link" Grid.Column="1" HorizontalAlignment="Left" Margin="13,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Egg_Skelly" Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="151,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_HashBrowns" Content="Hashbrowns" Grid.Column="1" HorizontalAlignment="Left" Margin="13,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Pancakes" Content="Pancakes" Grid.Column="1" HorizontalAlignment="Left" Margin="151,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Broccoli" Content="Broccoi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Mushrooms" Content="Mushrooms" Grid.Column="1" HorizontalAlignment="Left" Margin="146,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Tomato_Omelette" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="20,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Cheddar" Content="Cheddar" Grid.Column="1" HorizontalAlignment="Left" Margin="146,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Sirloin" Content="Sirloin" Grid.Column="1" HorizontalAlignment="Left" Margin="13,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Onion" Content="Onion" Grid.Column="1" HorizontalAlignment="Left" Margin="131,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Roll" Content="Roll" Grid.Column="1" HorizontalAlignment="Left" Margin="13,71,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Bun" Checked="Checked_Bun" Content="Bun" Grid.Column="1" HorizontalAlignment="Left" Margin="11,36,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Ketchup" Checked="Checked_Ketchup" Content="Ketchup" Grid.Column="1" HorizontalAlignment="Left" Margin="11,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mustard" Checked="Checked_Mustard"  Content="Mustard" Grid.Column="1" HorizontalAlignment="Left" Margin="11,82,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Pickle" Checked="Checked_Pickle"  Content="Pickle" Grid.Column="1" HorizontalAlignment="Left" Margin="126,38,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Cheese" Checked="Checked_Cheese" Content="Cheese" Grid.Column="1" HorizontalAlignment="Left" Margin="126,59,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.056,-0.66" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_tomato" Checked="Checked_tomato" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="126,83,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Lettuce" Checked="Checked_Lettuce" Content="Lettuce" Grid.Column="1" HorizontalAlignment="Left" Margin="11,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mayo" Checked="Checked_Mayo"  Content="Mayo" Grid.Column="1" HorizontalAlignment="Left" Margin="126,106,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Bacon" Checked="Checked_Bacon" Content="Bacon" Grid.Column="1" HorizontalAlignment="Left" Margin="11,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Egg" Checked="Checked_Egg"  Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="126,131,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.084,-0.527" IsChecked="True" Visibility="Hidden"/>
+
+        <CheckBox x:Name="Check_Sausage_Link" Checked="Checked_Sausage"  Content="Sausage Link" Grid.Column="1" HorizontalAlignment="Left" Margin="13,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Egg_Skelly" Checked="Checked_Egg_Skelly"  Content="Egg" Grid.Column="1" HorizontalAlignment="Left" Margin="151,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_HashBrowns" Checked="Checked_HashBrowns" Content="Hashbrowns" Grid.Column="1" HorizontalAlignment="Left" Margin="13,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Pancakes" Checked="Checked_Pancakes" Content="Pancakes" Grid.Column="1" HorizontalAlignment="Left" Margin="151,59,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Broccoli" Checked="Checked_Broccoli"  Content="Broccoi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Mushrooms" Checked="Checked_Mushrooms" Content="Mushrooms" Grid.Column="1" HorizontalAlignment="Left" Margin="146,39,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Tomato_Omelette" Checked="Checked_Tomato_Omelette" Content="Tomato" Grid.Column="1" HorizontalAlignment="Left" Margin="20,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Cheddar" Checked="Checked_Cheddar"  Content="Cheddar" Grid.Column="1" HorizontalAlignment="Left" Margin="146,67,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Sirloin" Checked="Checked_Sirloin" Content="Sirloin" Grid.Column="1" HorizontalAlignment="Left" Margin="13,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Onion" Checked="Checked_Onion" Content="Onion" Grid.Column="1" HorizontalAlignment="Left" Margin="131,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Roll" Checked="Checked_Roll" Content="Roll" Grid.Column="1" HorizontalAlignment="Left" Margin="13,71,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
         <Border BorderThickness="1,1,1,0" BorderBrush="Black"/>
         <Border BorderThickness="1,0,1,1" BorderBrush="Black" Grid.Row="1"/>
         <Border BorderThickness="0,1,1,1" BorderBrush="Black" Grid.Column="1" Grid.Row="1"/>

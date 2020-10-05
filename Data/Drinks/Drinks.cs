@@ -3,6 +3,8 @@ using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Drinks
 {
@@ -11,6 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public abstract class Drinks : IOrderItem
     {
+        public virtual event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// the Size of the Drink 
         /// </summary>

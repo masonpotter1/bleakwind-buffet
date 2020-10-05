@@ -4,10 +4,11 @@ using BleakwindBuffet.Data.Enums;
 using Data;
 using System;
 using Xunit;
+using System.ComponentModel;
 
 namespace Test_Types
 {
-   public class Test_Drinks
+   public class Test_Drinks 
     {
         [Fact]
         public void DrinkPropertyDefaults()
@@ -226,6 +227,143 @@ namespace Test_Types
             Assert.IsAssignableFrom<IOrderItem>(sd);
             Assert.IsAssignableFrom<IOrderItem>(wd);
         }
+
+
+        /// <summary>
+        /// makes sure that all classes take the InotifyPropertyChange Interface
+        /// </summary>
+        [Fact]
+        public void ClassIsImplmented()
+        {
+
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            CandlehearthCoffee cf = new CandlehearthCoffee();
+            MarkarthMilk mk = new MarkarthMilk();
+            SailorSoda sd = new SailorSoda();
+            WarriorWater wd = new WarriorWater();
+
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(cf);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mk);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(sd);
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(wd);
+
+        }
+        /// <summary>
+        /// checks the ice property of drinks
+        /// </summary>
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+            CandlehearthCoffee cf = new CandlehearthCoffee();
+            MarkarthMilk mk = new MarkarthMilk();
+            SailorSoda sd = new SailorSoda();
+            WarriorWater wd = new WarriorWater();
+
+            // those with default true Ice 
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.ice = true;
+            });
+            Assert.PropertyChanged(cf, "Ice", () =>
+            {
+                cf.ice = true;
+            });
+            Assert.PropertyChanged(mk, "Ice", () =>
+            {
+                mk.ice = true;
+            });
+            Assert.PropertyChanged(sd, "Hold Ice", () =>
+            {
+                sd.ice = false;
+            });
+            Assert.PropertyChanged(wd, "Hold Ice", () =>
+            {
+                wd.ice = false;
+            });
+
+            // Default False Ice
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.ice = false;
+            });
+            Assert.PropertyChanged(cf, "Ice", () =>
+            {
+                cf.ice = false;
+            });
+            Assert.PropertyChanged(mk, "Ice", () =>
+            {
+                mk.ice = false;
+            });
+            Assert.PropertyChanged(sd, "Hold Ice", () =>
+            {
+                sd.ice = true;
+            });
+            Assert.PropertyChanged(wd, "Hold Ice", () =>
+            {
+                wd.ice = true;
+            });
+        }
+
+        [Fact]
+        public void ChecksMisDrinkProperties()
+        {
+            AretinoAppleJuice AJ = new AretinoAppleJuice();
+            CandlehearthCoffee cf = new CandlehearthCoffee();
+            MarkarthMilk mk = new MarkarthMilk();
+            SailorSoda sd = new SailorSoda();
+            WarriorWater wd = new WarriorWater();
+
+            Assert.PropertyChanged(cf, "Decaf", () =>
+            {
+                cf.decaf = true;
+            });
+            Assert.PropertyChanged(cf, "Cream", () =>
+            {
+                cf.roomForCream = true;
+            });
+
+            Assert.PropertyChanged(cf, "Decaf", () =>
+            {
+                cf.decaf = false;
+            });
+            Assert.PropertyChanged(cf, "Cream", () =>
+            {
+                cf.roomForCream = false;
+            });
+
+            Assert.PropertyChanged(wd, "Add lemon", () =>
+            {
+                wd.lemon = true;
+            });
+            Assert.PropertyChanged(wd, "Add lemon", () =>
+            {
+                wd.lemon = false;
+            });
+        }
+        /// <summary>
+        /// Checks to make sure soda flavors change
+        /// </summary>
+        /// <param name="x"></param>
+        [Theory]
+        [InlineData (SodaFlavor.Cherry)]
+        [InlineData(SodaFlavor.Blackberry)]
+        [InlineData(SodaFlavor.Grapefruit)]
+        [InlineData(SodaFlavor.Lemon)]
+        [InlineData(SodaFlavor.Peach)]
+        [InlineData(SodaFlavor.Watermelon)]
+        public void DrinkFlavorChanges(SodaFlavor x)
+        {
+            var Soda = new SailorSoda();
+            Assert.PropertyChanged(Soda, $"{x}", () =>
+            {
+                Soda.flavor = x;
+            });
+
+        }
+
+
     }
 }
 
