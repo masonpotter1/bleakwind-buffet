@@ -17,19 +17,21 @@
             <RowDefinition Height="550"/>
             <RowDefinition Height="218"/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2"/>
+        <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2">
+            <TextBox HorizontalAlignment="Left" Text="Order Number:" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
+                <TextBox.TextDecorations>
+                    <TextDecoration/>
+                </TextBox.TextDecorations>
+            </TextBox>
+            
+        </Border>
 
         <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,244,0,0"/>
         <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Small_Click"/>
         <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Medium_Click"/>
         <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Large_Click"/>
-        <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140" Click="Button_Add_Click"/>
         <Button x:Name="Button_Remove" Content="Remove/Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Center" Margin="0,10,0,0" Text="Running Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
-            <TextBox.TextDecorations>
-                <TextDecoration/>
-            </TextBox.TextDecorations>
-        </TextBox>
         <TextBlock HorizontalAlignment="Center" Text="Drinks" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,10,0,0"/>
         <Button x:Name="Button_Soda" Content="Salor Soda" HorizontalAlignment="Left" Margin="17,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Soda_Click"/>
         <Button x:Name="Button_Milk" Content="Markath Milk" HorizontalAlignment="Left" Margin="17,108,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Milk_Click"/>
@@ -42,7 +44,7 @@
         <Button x:Name="Button_DragonWaffleFries" Content="Dragonborn Waffle Fries" HorizontalAlignment="Left" Margin="200,285,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_DragonWaffleFries_Click" />
         <Button x:Name="Button_Vokun_Salad" Content="Vokun Salad" HorizontalAlignment="Left" Margin="17,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Vokun_Salad_Click"/>
         <Button x:Name="Button_Fried_Miraak" Content="Fried Miraak" HorizontalAlignment="Left" Margin="200,356,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial" Click="Button_Fried_Miraak_Click"/>
-        
+
         <CheckBox x:Name="SodaF2" Visibility="Hidden" Content="Cherry" Grid.Column="1" HorizontalAlignment="Left" Margin="23,51,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF2_Checked"/>
         <CheckBox x:Name="SodaF3" Visibility="Hidden" Content="Grapefruit" Grid.Column="1" HorizontalAlignment="Left" Margin="23,71,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF3_Checked"/>
         <CheckBox x:Name="SodaF4" Visibility="Hidden" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF4_Checked"/>

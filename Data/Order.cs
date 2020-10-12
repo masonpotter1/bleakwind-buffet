@@ -92,6 +92,12 @@ namespace Data
             }
         }
 
+        private double total;
+        public double Total
+        {
+            get { total= Subtotal + Tax; return total; }
+        }
+
         private double tax;
         public double Tax
         {
@@ -102,7 +108,7 @@ namespace Data
             }
         }
 
-        public int Number { get; set; }
+        public int Number { get; set; } = 1;
 
         public uint Calories
         {

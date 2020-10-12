@@ -25,9 +25,12 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        Order ThisOrder = new Order();
         public MainWindow()
         {
             InitializeComponent();
+            
             
         }
 
@@ -974,10 +977,15 @@ namespace PointOfSale
             }
         }
 
+        private void Button_Add_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.DataContext is IOrderItem item)
+            {
+                ThisOrder.Add(item);
 
-
-
-
+            }
+            
+        }
     }
 
 }
