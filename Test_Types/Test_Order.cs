@@ -5,6 +5,8 @@ using Data;
 using System;
 using Xunit;
 using System.ComponentModel;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
 
 namespace Test_Types
 {
@@ -38,10 +40,31 @@ namespace Test_Types
             var Order = new Order();
             var Thing = new AretinoAppleJuice();
             Order.Add(Thing);
-            Order.Remove(Thing);
-            Assert.False(Order.Contains(Thing) == true);
+            Assert.True(Order.Remove(Thing));
         }
 
+        [Fact]
+        public void ClearList()
+        {
+            var Order = new Order();
+            var Thing = new AretinoAppleJuice();
+            var Stuff = new BriarheartBurger();
+            var That = new DragonbornWaffleFries();
+            Order.Add(Thing);
+            Order.Add(Stuff);
+            Order.Add(That);
 
+            Order.Clear();
+            Assert.Empty(Order);
+
+        }
+
+        [Fact]
+        public void CopyWorks()
+        {
+            var order = new Order();
+            var SecondOrder = 
+
+        }
     }
 }

@@ -17,14 +17,7 @@
             <RowDefinition Height="550"/>
             <RowDefinition Height="218"/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="3" BorderBrush="Black" Grid.Column="2">
-            <TextBox HorizontalAlignment="Left" Text="Order Number:" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Height="32" FontWeight="Bold" FontStyle="Normal" FontFamily="Arial Black" FontSize="18">
-                <TextBox.TextDecorations>
-                    <TextDecoration/>
-                </TextBox.TextDecorations>
-            </TextBox>
-            
-        </Border>
+
 
         <TextBlock HorizontalAlignment="Center" Text="Sides" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,244,0,0"/>
         <Button x:Name="Button_Small" Content="Small" Grid.Column="2" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Small_Click"/>
@@ -91,6 +84,18 @@
         <Border BorderThickness="1,0,1,1" BorderBrush="Black" Grid.Row="1"/>
         <Border BorderThickness="0,1,1,1" BorderBrush="Black" Grid.Column="1" Grid.Row="1"/>
         <Border BorderThickness="0,1,0,0" BorderBrush="Black" Grid.Column="1"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Order Number:" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="36" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="151,10,0,0" Text="{Binding Path=ThisOrder.Number}" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="36" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+        
+        
+        
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,476,0,0" Text="Subtotal" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,499,0,0" Text="Tax" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,522,0,0" Text="Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,476,0,0" Text="{Binding Path=ThisOrder.Subtotal}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,499,0,0" Text="{Binding Path=ThisOrder.Tax}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,522,0,0" Text="{Binding Path=ThisOrder.Total}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
 
 
     </Grid>
