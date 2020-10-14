@@ -24,7 +24,7 @@
         <Button x:Name="Button_Medium" Content="Medium" Grid.Column="2" HorizontalAlignment="Left" Margin="28,65,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Medium_Click"/>
         <Button x:Name="Button_Large" Content="Large" Grid.Column="2" HorizontalAlignment="Left" Margin="28,120,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="75" RenderTransformOrigin="0.567,0.493" Click="Button_Large_Click"/>
         <Button x:Name="Button_Add" Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="162,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140" Click="Button_Add_Click"/>
-        <Button x:Name="Button_Remove" Content="Remove/Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button x:Name="Button_Remove" Content="Remove/Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="162,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="55" Width="140" Click="Button_Remove_Click"/>
         <TextBlock HorizontalAlignment="Center" Text="Drinks" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" FontSize="18" FontWeight="Bold" Height="36" FontFamily="Cooper Black" Margin="0,10,0,0"/>
         <Button x:Name="Button_Soda" Content="Salor Soda" HorizontalAlignment="Left" Margin="17,48,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Soda_Click"/>
         <Button x:Name="Button_Milk" Content="Markath Milk" HorizontalAlignment="Left" Margin="17,108,0,0" VerticalAlignment="Top" Height="45" Width="100" FontSize="15" FontFamily="Arial" Click="Button_Milk_Click"/>
@@ -80,21 +80,30 @@
         <CheckBox x:Name="Check_Sirloin" Checked="Checked_Sirloin" Content="Sirloin" Unchecked="Checked_Sirloin" Grid.Column="1" HorizontalAlignment="Left" Margin="13,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
         <CheckBox x:Name="Check_Onion" Checked="Checked_Onion" Content="Onion" Unchecked="Checked_Onion" Grid.Column="1" HorizontalAlignment="Left" Margin="131,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
         <CheckBox x:Name="Check_Roll" Checked="Checked_Roll" Content="Roll" Unchecked="Checked_Roll" Grid.Column="1" HorizontalAlignment="Left" Margin="13,71,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True" Visibility="Hidden"/>
-        <Border BorderThickness="1,1,1,0" BorderBrush="Black"/>
-        <Border BorderThickness="1,0,1,1" BorderBrush="Black" Grid.Row="1"/>
+        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Margin="-5,-5,0,0"/>
+
         <Border BorderThickness="0,1,1,1" BorderBrush="Black" Grid.Column="1" Grid.Row="1"/>
-        <Border BorderThickness="0,1,0,0" BorderBrush="Black" Grid.Column="1"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Text="Order Number:" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="36" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="151,10,0,0" Text="{Binding Path=ThisOrder.Number}" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="36" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
-        
-        
-        
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,476,0,0" Text="Subtotal" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,499,0,0" Text="Tax" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,522,0,0" Text="Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,476,0,0" Text="{Binding Path=ThisOrder.Subtotal}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,499,0,0" Text="{Binding Path=ThisOrder.Tax}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="194,522,0,0" Text="{Binding Path=ThisOrder.Total}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Border BorderThickness="1,1,1,1" BorderBrush="Black" Grid.Column="1"/>
+
+
+
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,476,0,0" Text="Subtotal" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" />
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,499,0,0" Text="Tax" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" />
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="10,522,0,0" Text="Total" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,476,0,0" x:Name="ui_Subtotal" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,499,0,0" x:Name="ui_Tax"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,522,0,0" x:Name="ui_Total"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" />
+        <ListBox Grid.Column="2" Margin="0,25,-5,89" x:Name="Orderlist">
+            <ListBoxItem Content="{Binding Source=this, Path= OrderItems}">
+
+            </ListBoxItem>
+        </ListBox>
+        <Button x:Name="NewOrder" Content="New Order" HorizontalAlignment="Left" Margin="30,60,0,0" Grid.Row="1" VerticalAlignment="Top" Height="79" Width="94" Click="NewOrder_Click"/>
+        <Button x:Name="ClearOrder" Content="Clear Order" HorizontalAlignment="Left" Margin="175,60,0,0" Grid.Row="1" VerticalAlignment="Top" Height="82" Width="105" Click="ClearOrder_Click"/>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1"/>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2">
+            <TextBox x:Name="ui_Number" TextWrapping="Wrap" Margin="0,0,0,525" FontSize="16" FontWeight="Bold"/>
+        </Border>
 
 
 

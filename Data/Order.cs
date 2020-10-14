@@ -11,7 +11,7 @@ namespace Data
         public event PropertyChangedEventHandler PropertyChanged;
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
-        List<IOrderItem> OrderItems = new List<IOrderItem>();
+        public List<IOrderItem> OrderItems = new List<IOrderItem>();
 
         public void Add(IOrderItem thing)
         {
@@ -79,11 +79,12 @@ namespace Data
 
         public double SalesTaxRate { get; set; } = .12;
 
-        private double subTotal;
+        private double subTotal = 0 ;
         public double Subtotal
         {
             get
             {
+                subTotal = 0;
                 foreach(IOrderItem item in OrderItems)
                 {
                     subTotal += item.Price;
@@ -92,13 +93,13 @@ namespace Data
             }
         }
 
-        private double total;
+        private double total = 0;
         public double Total
         {
             get { total= Subtotal + Tax; return total; }
         }
 
-        private double tax;
+        private double tax = 0;
         public double Tax
         {
             get
@@ -107,8 +108,12 @@ namespace Data
                 return tax;
             }
         }
+        private static int nextNum = 1;
+        public int Number { 
+            get { int temp = nextNum; nextNum++; return temp; } 
+            
+        } 
 
-        public int Number { get; set; } = 1;
 
         public uint Calories
         {

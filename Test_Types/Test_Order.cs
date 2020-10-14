@@ -59,12 +59,7 @@ namespace Test_Types
 
         }
 
-        [Fact]
-        public void CopyWorks()
-        {
-            var order = new Order();
-            var SecondOrder = 
-
-        }
+        
+        
     }
 }

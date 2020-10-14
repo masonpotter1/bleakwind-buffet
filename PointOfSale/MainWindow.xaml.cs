@@ -27,12 +27,37 @@ namespace PointOfSale
     public partial class MainWindow : Window
     {
 
-        Order ThisOrder = new Order();
+        
         public MainWindow()
         {
             InitializeComponent();
+            Order ThisOrder = new Order();
+            Orderlist.DataContext =ThisOrder;
+
+            ui_Total.DataContext = Orderlist.DataContext;
+            ui_Tax.DataContext = Orderlist.DataContext;
+            ui_Subtotal.DataContext = Orderlist.DataContext;
+
+            Binding binding_1 = new Binding("Subtotal");
+            binding_1.Mode = BindingMode.OneWay;
+
+            Binding binding_2 = new Binding("Tax");
+            binding_2.Mode = BindingMode.OneWay;
+
+            Binding binding_3 = new Binding("Total");
+            binding_3.Mode = BindingMode.OneWay;
+
+            
+
+            
+            ui_Number.Text = ($"Order Number #{ThisOrder.Number.ToString()}");
+            ui_Subtotal.SetBinding(TextBox.TextProperty, binding_1) ;
+            ui_Tax.SetBinding(TextBox.TextProperty, binding_2);
+            ui_Total.SetBinding(TextBox.TextProperty, binding_3);
             
             
+           
+
         }
 
         /// <summary>
@@ -248,6 +273,12 @@ namespace PointOfSale
             Check_Ketchup.Visibility = Visibility.Visible;
             Check_Mustard.Visibility = Visibility.Visible;
             Check_Pickle.Visibility = Visibility.Visible;
+
+            Check_Bun.IsChecked = true;
+            Check_Cheese.IsChecked = true;
+            Check_Ketchup.IsChecked = true;
+            Check_Mustard.IsChecked = true;
+            Check_Pickle.IsChecked = true;
         }
 
         private void Button_Double_Draughr_Click(object sender, RoutedEventArgs e)
@@ -262,6 +293,16 @@ namespace PointOfSale
             Check_Lettuce.Visibility = Visibility.Visible;
             Check_Mayo.Visibility = Visibility.Visible;
             Check_tomato.Visibility = Visibility.Visible;
+
+            Check_Bun.IsChecked = true;
+            Check_Cheese.IsChecked = true;
+            Check_Ketchup.IsChecked = true;
+            Check_Mustard.IsChecked = true;
+            Check_Pickle.IsChecked = true;
+            Check_Lettuce.IsChecked = true;
+            Check_Mayo.IsChecked = true;
+            Check_tomato.IsChecked = true;
+
         }
 
         private void Button_Thalmor_Triple_Click(object sender, RoutedEventArgs e)
@@ -278,6 +319,17 @@ namespace PointOfSale
             Check_tomato.Visibility = Visibility.Visible;
             Check_Bacon.Visibility = Visibility.Visible;
             Check_Egg.Visibility = Visibility.Visible;
+
+            Check_Bun.IsChecked = true;
+            Check_Cheese.IsChecked = true;
+            Check_Ketchup.IsChecked = true;
+            Check_Mustard.IsChecked = true;
+            Check_Pickle.IsChecked = true;
+            Check_Lettuce.IsChecked = true;
+            Check_Mayo.IsChecked = true;
+            Check_tomato.IsChecked = true;
+            Check_Bacon.IsChecked = true;
+            Check_Egg.IsChecked = true;
         }
 
         private void Button_SmokeHouse_Skeleton_Click(object sender, RoutedEventArgs e)
@@ -416,7 +468,7 @@ namespace PointOfSale
         }
         private void Checked_Cheese(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Cheese.IsChecked == false)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -435,7 +487,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Cheese.IsChecked == true)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -457,7 +509,7 @@ namespace PointOfSale
         }
         private void Checked_Ketchup(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Ketchup.IsChecked == false)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -476,7 +528,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Ketchup.IsChecked == true)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -498,7 +550,7 @@ namespace PointOfSale
         }
         private void Checked_Mustard(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Mustard.IsChecked == false)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -517,7 +569,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Mustard.IsChecked == true)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -539,7 +591,7 @@ namespace PointOfSale
         }
         private void Checked_Pickle(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Pickle.IsChecked == false)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -558,7 +610,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Pickle.IsChecked == true)
             {
                 if (this.DataContext is BriarheartBurger singel)
                 {
@@ -580,7 +632,7 @@ namespace PointOfSale
         }
         private void Checked_Lettuce(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Lettuce.IsChecked == false)
             {
                 
                 if (this.DataContext is DoubleDraugr Double)
@@ -595,7 +647,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Lettuce.IsChecked == true)
             {
                
                 if (this.DataContext is DoubleDraugr Double)
@@ -613,7 +665,7 @@ namespace PointOfSale
         }
         private void Checked_Mayo(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Mayo.IsChecked == false)
             {
 
                 if (this.DataContext is DoubleDraugr Double)
@@ -628,7 +680,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Mayo.IsChecked == true)
             {
 
                 if (this.DataContext is DoubleDraugr Double)
@@ -646,7 +698,7 @@ namespace PointOfSale
         }
         private void Checked_tomato(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_tomato.IsChecked == false)
             {
 
                 if (this.DataContext is DoubleDraugr Double)
@@ -661,7 +713,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_tomato.IsChecked == true)
             {
 
                 if (this.DataContext is DoubleDraugr Double)
@@ -679,7 +731,7 @@ namespace PointOfSale
         }
         private void Checked_Bacon(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Bacon.IsChecked == false)
             {
 
                 if (this.DataContext is ThalmorTriple tripple)
@@ -689,7 +741,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Bacon.IsChecked == true)
             {
 
                 if (this.DataContext is ThalmorTriple tripple)
@@ -702,7 +754,7 @@ namespace PointOfSale
         }
         private void Checked_Egg(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Egg.IsChecked == false)
             {
 
                 if (this.DataContext is ThalmorTriple tripple)
@@ -712,7 +764,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Egg.IsChecked == true)
             {
 
                 if (this.DataContext is ThalmorTriple tripple)
@@ -727,7 +779,7 @@ namespace PointOfSale
 
         private void Checked_Egg_Skelly(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Egg_Skelly.IsChecked == false)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -737,7 +789,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Egg_Skelly.IsChecked == true)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -750,7 +802,7 @@ namespace PointOfSale
         }
         private void Checked_HashBrowns(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_HashBrowns.IsChecked == false)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -760,7 +812,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_HashBrowns.IsChecked == true)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -773,7 +825,7 @@ namespace PointOfSale
         }
         private void Checked_Sausage(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Sausage_Link.IsChecked == false)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -783,7 +835,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Sausage_Link.IsChecked == true)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -796,7 +848,7 @@ namespace PointOfSale
         }
         private void Checked_Pancakes(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Pancakes.IsChecked == false)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -806,7 +858,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Pancakes.IsChecked == true)
             {
 
                 if (this.DataContext is SmokehouseSkeleton ss)
@@ -819,7 +871,7 @@ namespace PointOfSale
         }
         private void Checked_Broccoli(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Broccoli.IsChecked == false)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -829,7 +881,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Broccoli.IsChecked == true)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -842,7 +894,7 @@ namespace PointOfSale
         }
         private void Checked_Cheddar(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Cheddar.IsChecked == false)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -852,7 +904,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Cheddar.IsChecked == true)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -865,7 +917,7 @@ namespace PointOfSale
         }
         private void Checked_Tomato_Omelette(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Tomato_Omelette.IsChecked == false)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -875,7 +927,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Tomato_Omelette.IsChecked == true)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -888,7 +940,7 @@ namespace PointOfSale
         }
         private void Checked_Mushrooms(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Mushrooms.IsChecked == false)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -898,7 +950,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Mushrooms.IsChecked == true)
             {
 
                 if (this.DataContext is GardenOrcOmelette ss)
@@ -911,7 +963,7 @@ namespace PointOfSale
         }
         private void Checked_Onion(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Onion.IsChecked == false)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -921,7 +973,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Onion.IsChecked == true)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -934,7 +986,7 @@ namespace PointOfSale
         }
         private void Checked_Sirloin(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Sirloin.IsChecked == false)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -944,7 +996,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Sirloin.IsChecked == true)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -957,7 +1009,7 @@ namespace PointOfSale
         }
         private void Checked_Roll(object sender, RoutedEventArgs e)
         {
-            if (Check_Bun.IsChecked == false)
+            if (Check_Roll.IsChecked == false)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -967,7 +1019,7 @@ namespace PointOfSale
                 }
             }
 
-            else if (Check_Bun.IsChecked == true)
+            else if (Check_Roll.IsChecked == true)
             {
 
                 if (this.DataContext is PhillyPoacher ss)
@@ -982,7 +1034,48 @@ namespace PointOfSale
         {
             if(this.DataContext is IOrderItem item)
             {
+                if(Orderlist.DataContext is Order ThisOrder)
                 ThisOrder.Add(item);
+                ListBoxItem box = new ListBoxItem();
+                box.Content = item;
+                ListBoxItem box2 = new ListBoxItem();
+                box2.Content = item.SpecialInstructions;
+
+                
+                Orderlist.Items.Add(box);
+                Orderlist.Items.Add(box2);
+
+
+            }
+        }
+
+        private void Button_Remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Orderlist.Items.Clear();
+
+            if (Orderlist.DataContext is Order ThisOrder)
+            {
+                Orderlist.DataContext = new Order();
+                ui_Number.Text = ($"Order Number #{ThisOrder.Number.ToString()}");
+                ui_Total.DataContext = Orderlist.DataContext;
+                ui_Tax.DataContext = Orderlist.DataContext;
+                ui_Subtotal.DataContext = Orderlist.DataContext;
+            }
+        }
+
+        private void ClearOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Orderlist.Items.Clear();
+
+            if(Orderlist.DataContext is Order Order)
+            {
+                Order.Clear();
+
             }
         }
     }

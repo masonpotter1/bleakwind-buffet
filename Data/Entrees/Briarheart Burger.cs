@@ -144,7 +144,16 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override string ToString()
         {
-            return ("Briarheart Burger");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Briarheart Burger \n");
+            for(int i=0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            string final = sb.ToString();
+            return (final);
         }
 
         /// <summary>
