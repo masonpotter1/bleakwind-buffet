@@ -152,6 +152,8 @@ namespace BleakwindBuffet.Data.Entrees
                 sb.Append(specialInstructions[i]);
                 sb.Append("\n");
             }
+            sb.Append($"                                                                         ${Price}");
+
             string final = sb.ToString();
             return (final);
         }
@@ -163,7 +165,6 @@ namespace BleakwindBuffet.Data.Entrees
         protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
         }
 
     }

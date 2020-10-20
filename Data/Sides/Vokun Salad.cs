@@ -76,7 +76,18 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public override string ToString()
         {
-            return ($"{Size} Vokun Salad");
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{Size} Vokun Salad \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
     }
 }

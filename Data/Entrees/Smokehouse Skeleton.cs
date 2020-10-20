@@ -130,7 +130,18 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override string ToString()
         {
-            return ("Smokehouse Skeleton");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Smokehouse Skeleton \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
         /// <summary>
         /// The Property that was changes - creates a new changed event.

@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -40,16 +41,17 @@ namespace PointOfSale
 
             Binding binding_1 = new Binding("Subtotal");
             binding_1.Mode = BindingMode.OneWay;
+            binding_1.StringFormat = "c";
 
             Binding binding_2 = new Binding("Tax");
             binding_2.Mode = BindingMode.OneWay;
+            binding_2.StringFormat = "c";
 
             Binding binding_3 = new Binding("Total");
             binding_3.Mode = BindingMode.OneWay;
+            binding_3.StringFormat = "c";
 
-            
 
-            
             ui_Number.Text = ($"Order Number #{ThisOrder.Number.ToString()}");
             ui_Subtotal.SetBinding(TextBox.TextProperty, binding_1) ;
             ui_Tax.SetBinding(TextBox.TextProperty, binding_2);
@@ -67,6 +69,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Button_Soda_Click(object sender, RoutedEventArgs e)
         {
+            allButtonsFalse();
             this.DataContext = new SailorSoda();
 
             SodaF1.Visibility = Visibility.Visible;
@@ -78,8 +81,6 @@ namespace PointOfSale
             SodaF6.Visibility = Visibility.Visible;
             DrinkIce.Visibility = Visibility.Visible;
             DrinkIce.IsChecked = true;
-
-            
         }
 
         /// <summary>
@@ -227,6 +228,10 @@ namespace PointOfSale
             Check_Onion.Visibility = Visibility.Hidden;
             Check_Sirloin.Visibility = Visibility.Hidden;
             Check_Roll.Visibility = Visibility.Hidden;
+
+            Button_Medium.Opacity = 1;
+            Button_Small.Opacity = 1;
+            Button_Large.Opacity = 1;
         }
         /// <summary>
         /// These Buttons Represent the Sides on the menu
@@ -421,10 +426,97 @@ namespace PointOfSale
             {
                 side.Size = BleakwindBuffet.Data.Enums.Size.Large;
             }
+        }
 
+        private void CheckIce (object sender, RoutedEventArgs e)
+        {
+            if (DrinkIce.IsChecked == false)
+            {
+
+                if (this.DataContext is AretinoAppleJuice aj)
+                {
+                    aj.ice = true;
+                }
+                if (this.DataContext is CandlehearthCoffee coffee)
+                {
+                    coffee.ice = true;
+                }
+                if (this.DataContext is MarkarthMilk milk)
+                {
+                    milk.ice = true;
+                }
+                if (this.DataContext is SailorSoda soda)
+                {
+                    soda.ice = false;
+                }
+                if (this.DataContext is WarriorWater water)
+                {
+                    water.ice = false;
+                }
+            }
+
+            else if (DrinkIce.IsChecked == true)
+            {
+
+                if (this.DataContext is AretinoAppleJuice aj)
+                {
+                    aj.ice = false;
+                }
+                if (this.DataContext is CandlehearthCoffee coffee)
+                {
+                    coffee.ice = false;
+                }
+                if (this.DataContext is MarkarthMilk milk)
+                {
+                    milk.ice = false;
+                }
+                if (this.DataContext is SailorSoda soda)
+                {
+                    soda.ice = true;
+                }
+                if (this.DataContext is WarriorWater water)
+                {
+                    water.ice = true;
+                }
+            }
 
         }
 
+        private void Checked_Lemon(object sender, RoutedEventArgs e)
+        {
+            if (Check_Lemon.IsChecked == false)
+            {
+                if (this.DataContext is WarriorWater water)
+                {
+                    water.lemon = true;
+                }
+            }
+            else if (Check_Lemon.IsChecked == true)
+            {
+                if (this.DataContext is WarriorWater water)
+                {
+                    water.lemon= false;
+                }
+            }
+        }
+
+        private void Checked_Decaf(object sender, RoutedEventArgs e)
+        {
+            if (Check_Lemon.IsChecked == false)
+            {
+                if (this.DataContext is CandlehearthCoffee coffee)
+                {
+                    coffee.decaf = false;
+                }
+            }
+            else if (Check_Lemon.IsChecked == true)
+            {
+                if (this.DataContext is CandlehearthCoffee coffee)
+                {
+                    coffee.decaf = true;
+                }
+            }
+        }
 
         private void Checked_Bun(object sender, RoutedEventArgs e)
         {
@@ -775,8 +867,6 @@ namespace PointOfSale
             }
 
         }
-
-
         private void Checked_Egg_Skelly(object sender, RoutedEventArgs e)
         {
             if (Check_Egg_Skelly.IsChecked == false)
@@ -1037,15 +1127,9 @@ namespace PointOfSale
                 if(Orderlist.DataContext is Order ThisOrder)
                 ThisOrder.Add(item);
                 ListBoxItem box = new ListBoxItem();
-                box.Content = item;
-                ListBoxItem box2 = new ListBoxItem();
-                box2.Content = item.SpecialInstructions;
-
-                
+                box.Content = item;                
                 Orderlist.Items.Add(box);
-                Orderlist.Items.Add(box2);
-
-
+                
             }
         }
 
@@ -1056,15 +1140,24 @@ namespace PointOfSale
 
         private void NewOrder_Click(object sender, RoutedEventArgs e)
         {
-            Orderlist.Items.Clear();
+            PaymentWindow pw = new PaymentWindow();
 
-            if (Orderlist.DataContext is Order ThisOrder)
+            if (Orderlist.DataContext is Order ThisOrder1)
             {
-                Orderlist.DataContext = new Order();
-                ui_Number.Text = ($"Order Number #{ThisOrder.Number.ToString()}");
-                ui_Total.DataContext = Orderlist.DataContext;
-                ui_Tax.DataContext = Orderlist.DataContext;
-                ui_Subtotal.DataContext = Orderlist.DataContext;
+                pw.UpdateDataContex(ThisOrder1);
+            }
+            Nullable<bool> val = pw.ShowDialog();
+            
+            if (val == true){ 
+                Orderlist.Items.Clear();
+                if (Orderlist.DataContext is Order ThisOrder)
+                {
+                    Orderlist.DataContext = new Order();
+                    ui_Number.Text = ($"Order Number #{ThisOrder.Number.ToString()}");
+                    ui_Total.DataContext = Orderlist.DataContext;
+                    ui_Tax.DataContext = Orderlist.DataContext;
+                    ui_Subtotal.DataContext = Orderlist.DataContext;
+                }
             }
         }
 

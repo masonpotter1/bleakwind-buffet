@@ -75,7 +75,18 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public override string ToString()
         {
-            return ($"{Size} Fried Miraak");
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{Size} Fried Miraak \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
     }
 }

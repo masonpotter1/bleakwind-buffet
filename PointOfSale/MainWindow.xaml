@@ -43,10 +43,11 @@
         <CheckBox x:Name="SodaF4" Visibility="Hidden" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,91,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF4_Checked"/>
         <CheckBox x:Name="SodaF5" Visibility="Hidden" Content="Peach" Grid.Column="1" HorizontalAlignment="Left" Margin="23,111,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF5_Checked"/>
         <CheckBox x:Name="SodaF6" Visibility="Hidden" Content="Watermelon" Grid.Column="1" HorizontalAlignment="Left" Margin="23,131,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="SodaF6_Checked"/>
-        <CheckBox x:Name="DrinkIce" Visibility="Hidden" Content="Ice" Grid.Column="1" HorizontalAlignment="Left" Margin="175,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        
+        <CheckBox x:Name="DrinkIce" Checked="CheckIce" Unchecked="CheckIce" Visibility="Hidden" Content="Ice" Grid.Column="1" HorizontalAlignment="Left" Margin="175,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
         <CheckBox x:Name="check_RoomForCream" Content="Room for Cream" Grid.Column="1" HorizontalAlignment="Left" Margin="24,30,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Decaf" Content="Make Decaf" Grid.Column="1" HorizontalAlignment="Left" Margin="24,51,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-        <CheckBox x:Name="Check_Lemon" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="15,30,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Decaf" Checked="Checked_Decaf" Unchecked="Checked_Decaf" Content="Make Decaf" Grid.Column="1" HorizontalAlignment="Left" Margin="24,51,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
+        <CheckBox x:Name="Check_Lemon" Checked="Checked_Lemon" Unchecked="Checked_Lemon" Content="Lemon" Grid.Column="1" HorizontalAlignment="Left" Margin="15,30,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
 
         <Button x:Name="Button_Briarheart_Burger" Content="Briarheart Burger" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Briarheart_Burger_Click" />
         <Button x:Name="Button_Double_Draughr" Content="Double Draughr" HorizontalAlignment="Left" Margin="207,48,0,0" VerticalAlignment="Top" Height="45" Width="133" FontSize="15" FontFamily="Arial"  Grid.Column="1" Click="Button_Double_Draughr_Click" />
@@ -93,12 +94,12 @@
         <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,476,0,0" x:Name="ui_Subtotal" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,499,0,0" x:Name="ui_Tax"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="182,522,0,0" x:Name="ui_Total"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True" />
-        <ListBox Grid.Column="2" Margin="0,25,-5,89" x:Name="Orderlist">
-            <ListBoxItem Content="{Binding Source=this, Path= OrderItems}">
+        <ListBox Grid.Column="2" Margin="0,25,10,89" x:Name="Orderlist">
+            <ListBoxItem Content="{Binding Source=this, Path= OrderItems}" Width="317">
 
             </ListBoxItem>
         </ListBox>
-        <Button x:Name="NewOrder" Content="New Order" HorizontalAlignment="Left" Margin="30,60,0,0" Grid.Row="1" VerticalAlignment="Top" Height="79" Width="94" Click="NewOrder_Click"/>
+        <Button x:Name="NewOrder" Content="Finish Order" HorizontalAlignment="Left" Margin="30,60,0,0" Grid.Row="1" VerticalAlignment="Top" Height="79" Width="94" Click="NewOrder_Click"/>
         <Button x:Name="ClearOrder" Content="Clear Order" HorizontalAlignment="Left" Margin="175,60,0,0" Grid.Row="1" VerticalAlignment="Top" Height="82" Width="105" Click="ClearOrder_Click"/>
         <Border BorderThickness="1" BorderBrush="Black" Grid.Row="1"/>
         <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2">

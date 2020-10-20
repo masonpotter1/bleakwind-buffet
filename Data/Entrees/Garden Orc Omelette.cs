@@ -130,7 +130,18 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override string ToString()
         {
-            return ("Garden Orc Omelette");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Garden Orc Omelette \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
 
         /// <summary>

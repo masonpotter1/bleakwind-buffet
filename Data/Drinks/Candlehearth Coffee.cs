@@ -128,12 +128,34 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override string ToString()
         {
+            StringBuilder sb = new StringBuilder();
             if (!decaf)
             {
-                return ($"{Size} Candlehearth Coffee");
+                sb.Append($"{Size} Candlehearth Coffee \n");
+                for (int i = 0; i < specialInstructions.Count; i++)
+                {
+                    sb.Append(" -");
+                    sb.Append(specialInstructions[i]);
+                    sb.Append("\n");
+                }
+                sb.Append($"                                                                         ${Price}");
+                string final = sb.ToString();
+                return (final);
             }
-            else { return ($"{Size} Decaf Candlehearth Coffee"); }
+            else {
+                sb.Append($"{Size} Decaf Candlehearth Coffee \n");
+                for (int i = 0; i < specialInstructions.Count; i++)
+                {
+                    sb.Append(" -");
+                    sb.Append(specialInstructions[i]);
+                    sb.Append("\n");
+                }
+                sb.Append($"                                                                         ${Price}");
+                string final = sb.ToString();
+                return (final);
+            }
         }
+
         /// <summary>
         /// The Property that was changes - creates a new changed event.
         /// </summary>

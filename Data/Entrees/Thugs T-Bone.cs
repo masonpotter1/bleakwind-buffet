@@ -50,7 +50,18 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override string ToString()
         {
-            return ("Thugs T-Bone");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Thugs T-Bone \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
 
         /// <summary>

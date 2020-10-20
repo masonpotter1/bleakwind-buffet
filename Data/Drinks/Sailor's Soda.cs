@@ -112,7 +112,18 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override string ToString()
         {
-            return ($"{Size} {flavor} Sailor Soda");
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{Size} {flavor} Sailor Soda \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+
+            string final = sb.ToString();
+            return (final);
         }
 
         /// <summary>

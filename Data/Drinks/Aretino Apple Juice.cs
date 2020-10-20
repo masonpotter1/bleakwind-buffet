@@ -92,7 +92,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override string ToString()
         {
-            return ($"{Size} Aretino Apple Juice");
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Aretino Apple Juice \n");
+            for (int i = 0; i < specialInstructions.Count; i++)
+            {
+                sb.Append(" -");
+                sb.Append(specialInstructions[i]);
+                sb.Append("\n");
+            }
+            sb.Append($"                                                                         ${Price}");
+            string final = sb.ToString();
+            return ($"{Size} {final}");
         }
 
         /// <summary>

@@ -87,7 +87,7 @@ namespace Data
                 subTotal = 0;
                 foreach(IOrderItem item in OrderItems)
                 {
-                    subTotal += item.Price;
+                    subTotal += Math.Round(item.Price,2);
                 }
                 return subTotal;
             }
@@ -96,7 +96,7 @@ namespace Data
         private double total = 0;
         public double Total
         {
-            get { total= Subtotal + Tax; return total; }
+            get { total= Math.Round(Subtotal + Tax,2); return total; }
         }
 
         private double tax = 0;
@@ -104,7 +104,7 @@ namespace Data
         {
             get
             {
-                tax = subTotal * SalesTaxRate;
+                tax = Math.Round(subTotal * SalesTaxRate,2);
                 return tax;
             }
         }
