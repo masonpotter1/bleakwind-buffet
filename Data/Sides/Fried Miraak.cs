@@ -69,7 +69,16 @@ namespace BleakwindBuffet.Data.Sides
         private variable that holds the size 
         */
         private Size OrderSize = Size.Small;
-     
+
+        /// <summary>
+        /// the name of the item
+        /// </summary>
+        /// <returns></returns>
+        public string Name()
+        {
+            return ("Fried Miraak");
+        }
+
         /// <summary>
         /// Override Method to return the item size and item name 
         /// </summary>

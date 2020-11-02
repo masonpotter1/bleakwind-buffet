@@ -130,6 +130,16 @@ namespace BleakwindBuffet.Data.Drinks
             return (final);
         }
 
+
+        /// <summary>
+        /// the name of the item
+        /// </summary>
+        /// <returns></returns>
+        public string Name()
+        {
+            return ("Warrior Water");
+        }
+
         /// <summary>
         /// The Property that was changes - creates a new changed event.
         /// </summary>

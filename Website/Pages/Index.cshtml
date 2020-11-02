@@ -1,0 +1,160 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Bleakwind Buffet</h1>
+    <p>
+        We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood
+        off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger.
+        Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!
+    </p>
+</div>
+
+@* this represents all of the entree options price and calories*@
+<div>
+    <h2 class="display-4"> Entree </h2>
+    <ul>
+        @foreach (Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Menu.AllEntrees)
+        {
+            <li>
+                <p>
+                    @entree.ToString() <br />
+                    Calories - @entree.Calories
+                </p>
+            </li>
+        }
+
+    </ul>
+
+</div>
+
+
+@* this represents all the prices and calories of the side options *@
+<div>
+    <h2 class="display-4"> Side </h2>
+    <div>
+        <ul>
+            <li>
+                Dragonborn Waffle Fries <br />
+                Small   -  $0.42  Calories - 77 <br />
+                Medium  -  $0.76  Calories - 89<br />
+                Large   -  $0.96  Calories - 100<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Fried Miraak <br />
+                Small   -  $1.78  Calories - 151 <br />
+                Medium  -  $2.01  Calories - 236<br />
+                Large   -  $2.88  Calories - 306<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Vokun Salad <br />
+                Small   -  $0.93  Calories - 41 <br />
+                Medium  -  $1.28  Calories - 52<br />
+                Large   -  $1.82  Calories - 73<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Mad Otar Grits <br />
+                Small   -  $1.22  Calories - 105 <br />
+                Medium  -  $1.58  Calories - 142<br />
+                Large   -  $1.93  Calories - 179<br />
+            </li>
+        </ul>
+    </div>
+</div>
+
+@* this represents all of the drink options price and calories*@
+<div>
+    <h2 class="display-4"> Drink </h2>
+    <div>
+        <ul>
+            <li>
+                Arentino Apple Juice <br />
+                Small   -  $0.62  Calories - 44 <br />
+                Medium  -  $0.87  Calories - 88<br />
+                Large   -  $1.01  Calories - 132<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Candlehearth Coffee <br />
+                Small   -  $0.75  Calories - 7 <br />
+                Medium  -  $1.25  Calories - 10<br />
+                Large   -  $1.75  Calories - 20<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Markarth Milk <br />
+                Small   -  $1.05  Calories - 56 <br />
+                Medium  -  $1.11  Calories - 72<br />
+                Large   -  $1.22  Calories - 93<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Warrior Water <br />
+                Small   -  $0.00  Calories - 0 <br />
+                Medium  -  $0.00  Calories - 0<br />
+                Large   -  $0.00  Calories - 0<br />
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li>
+                Sailor Soda <br />
+                Small   -  $1.42  Calories - 117 <br />
+                Medium  -  $1.74  Calories - 153<br />
+                Large   -  $2.07  Calories - 205<br />
+            </li>
+        </ul>
+    </div>
+</div>
+
+@* this represents all the flavors of the soda*@
+<div class="text-right">
+    <h2 class="display-4"> Soda Flavors </h2>
+    @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+    {
+        <ul>
+            <li class="right" >
+                @flavor.ToString()
+            </li>
+        </ul>
+
+    }
+</div>
+
+<br />
+<br />
+<p>
+    One Entree, Drink, and Side can be combined into a Combo Item for a $1.00 Discount.
+</p>

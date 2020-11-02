@@ -15,12 +15,16 @@ namespace BleakwindBuffet.Data.Menu
     /// </summary>
     public static class Menu
     {
+        public static List<IOrderItem> entrees = new List<IOrderItem>();
+
+        public static IEnumerable<IOrderItem> AllEntrees { get { return Entrees(); } }
+
         /// <summary>
         /// adds all entrees to the menu
         /// </summary>
         /// <returns> returns a list of all entrees</returns>
         public static IEnumerable<IOrderItem> Entrees()
-        {
+        { 
             List<IOrderItem> entreeList = new List<IOrderItem>();
             BriarheartBurger bb = new BriarheartBurger();
             DoubleDraugr dd = new DoubleDraugr();
@@ -39,6 +43,8 @@ namespace BleakwindBuffet.Data.Menu
 
             return (entreeList);
         }
+
+        public static IEnumerable<IOrderItem> AllDrinks { get { return Drinks(); } }
         /// <summary>
         /// adds all drinks to the menu
         /// </summary>
@@ -79,6 +85,8 @@ namespace BleakwindBuffet.Data.Menu
             }
             return Drinklist;
         }
+
+        public static IEnumerable<IOrderItem> AllSides { get { return Sides(); } }
         /// <summary>
         /// adds all sides to the list
         /// </summary>

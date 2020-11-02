@@ -106,6 +106,15 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
+        /// the name of the item
+        /// </summary>
+        /// <returns></returns>
+        public string Name()
+        {
+            return ("Aretino Apple Juice");
+        }
+
+        /// <summary>
         /// The Property that was changes - creates a new changed event.
         /// </summary>
         /// <param name="name"></param>
