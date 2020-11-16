@@ -360,9 +360,39 @@ namespace Test_Types
             {
                 Soda.flavor = x;
             });
-
         }
 
+
+        [Fact]
+        public void SodaDescription()
+        {
+            var Item = new SailorSoda();
+            Assert.Equal("An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.", Item.Description);
+        }
+        [Fact]
+        public void MilkDescription()
+        {
+            var Item = new MarkarthMilk();
+            Assert.Equal("Hormone-free organic 2% milk.", Item.Description);
+        }
+        [Fact]
+        public void JuiceDescription()
+        {
+            var Item = new AretinoAppleJuice();
+            Assert.Equal("Fresh squeezed apple juice.", Item.Description);
+        }
+        [Fact]
+        public void CoffeeDescription()
+        {
+            var Item = new CandlehearthCoffee();
+            Assert.Equal("Fair trade, fresh ground dark roast coffee.", Item.Description);
+        }
+        [Fact]
+        public void WaterDescription()
+        {
+            var Item = new WarriorWater();
+            Assert.Equal("It’s water. Just water.", Item.Description);
+        }
 
     }
 }

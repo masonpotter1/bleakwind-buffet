@@ -167,7 +167,30 @@ namespace Test_Types
             Assert.IsAssignableFrom<IOrderItem>(vs);
         }
 
+        [Fact]
+        public void VokunDescription()
+        {
+            var Item = new VokunSalad();
+            Assert.Equal("A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.", Item.Description);
+        }
 
-
+        [Fact]
+        public void MiraakDescription()
+        {
+            var Item = new FriedMiraak();
+            Assert.Equal("Perfectly prepared hash brown pancakes.", Item.Description);
+        }
+        [Fact]
+        public void GritsDescription()
+        {
+            var Item = new MadOtarGrits();
+            Assert.Equal("Cheesey Grits.", Item.Description);
+        }
+        [Fact]
+        public void FriesDescription()
+        {
+            var Item = new DragonbornWaffleFries();
+            Assert.Equal("Crispy fried potato waffle fries.", Item.Description);
+        }
     }
 }

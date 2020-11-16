@@ -27,5 +27,7 @@ namespace BleakwindBuffet.Data.Sides
         /// the special instructions of the Side
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        public virtual String Description { get; }
     }
 }

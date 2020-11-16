@@ -20,6 +20,19 @@ namespace BleakwindBuffet.Data.Sides
     {
         public override event PropertyChangedEventHandler PropertyChanged;
 
+
+        /// <summary>
+        /// Description of the item
+        /// </summary>
+        /// <returns></returns>
+        private string description = "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+
+        public override String Description
+        {
+            get => description;
+        }
+
+
         /// <summary>
         /// gets the prices of the various sizes
         /// </summary>

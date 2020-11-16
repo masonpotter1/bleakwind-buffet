@@ -580,5 +580,50 @@ namespace Test_Types
             });
 
         }
+
+        [Fact]
+        public void TboneDescription()
+        {
+            var Item = new ThugsTBone();
+            Assert.Equal("Juicy T-Bone, not much else to say.", Item.Description);
+        }
+        [Fact]
+        public void BriarheartBurgerDescription()
+        {
+            var Item = new BriarheartBurger();
+            Assert.Equal("Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.", Item.Description);
+        }
+        [Fact]
+        public void DraugrDescription()
+        {
+            var Item = new DoubleDraugr();
+            Assert.Equal("Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.", Item.Description);
+        }
+
+        [Fact]
+        public void ThalmorDescription()
+        {
+            var Item = new ThalmorTriple();
+            Assert.Equal("Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.", Item.Description);
+        }
+        [Fact]
+        public void SmokehouseDescription()
+        {
+            var Item = new SmokehouseSkeleton();
+            Assert.Equal("Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.", Item.Description);
+        }
+        [Fact]
+        public void GardenDescription()
+        {
+            var Item = new GardenOrcOmelette();
+            Assert.Equal("Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.", Item.Description);
+        }
+        [Fact]
+        public void PoacherDescription()
+        {
+            var Item = new PhillyPoacher();
+            Assert.Equal("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.", Item.Description);
+        }
+
     }
 }

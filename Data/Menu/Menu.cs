@@ -114,6 +114,7 @@ namespace BleakwindBuffet.Data.Menu
             return Sidelist;
 
         }
+        public static IEnumerable<IOrderItem> AllItems { get { return FullMenue(); } }
 
         public static IEnumerable<IOrderItem> FullMenue()
         {
@@ -124,6 +125,29 @@ namespace BleakwindBuffet.Data.Menu
 
             return menuItems;
 
+        }
+
+
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {/// null check
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (terms == null)
+            {
+                return FullMenue();  
+            }
+            /// adds the item to the list 
+            foreach (IOrderItem item in AllItems)
+            {
+                if (item is Entree e)
+                {
+                    if (e.ToString().Contains(terms))
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+            return results;
         }
     }
 }

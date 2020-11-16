@@ -19,9 +19,14 @@ namespace Website.Pages
             _logger = logger;
         }
 
+
+        public IEnumerable<IOrderItem> Items { get; set; }
+        public string SearchTerms { get; set; }
         public void OnGet()
         {
-
+            string terms = Request.Query["SearchTerms"];
+            SearchTerms = terms;
+            Items = BleakwindBuffet.Data.Menu.Menu.Search(SearchTerms);
         }
     }
 }

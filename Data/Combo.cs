@@ -108,6 +108,8 @@ namespace Data
         }
 
 
+        public String Description { get; }
+
         /// <summary>
         /// The Property that was changes - creates a new changed event.
         /// </summary>

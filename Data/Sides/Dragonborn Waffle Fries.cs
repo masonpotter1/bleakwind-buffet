@@ -18,6 +18,17 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>   
     public class DragonbornWaffleFries : Side
     {
+        /// <summary>
+        /// Description of the item
+        /// </summary>
+        /// <returns></returns>
+        private string description = "Crispy fried potato waffle fries.";
+
+        public override String Description
+        {
+            get => description;
+        }
+
         public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

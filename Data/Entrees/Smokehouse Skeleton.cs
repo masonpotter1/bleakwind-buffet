@@ -17,6 +17,17 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
     public class SmokehouseSkeleton : Entree
     {
+
+        /// <summary>
+        /// Description of the item
+        /// </summary>
+        /// <returns></returns>
+        private string description = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+
+        public override String Description
+        {
+            get => description;
+        }
         public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item

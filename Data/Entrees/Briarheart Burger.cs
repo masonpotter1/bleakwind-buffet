@@ -18,6 +18,13 @@ namespace BleakwindBuffet.Data.Entrees
 {
     public class BriarheartBurger  : Entree
     {
+        private string description = "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
+
+        public override String Description
+        {
+            get => description;
+        }
+
         public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item
@@ -157,6 +164,9 @@ namespace BleakwindBuffet.Data.Entrees
             string final = sb.ToString();
             return (final);
         }
+
+       
+
 
         /// <summary>
         /// The Property that was changes - creates a new changed event.

@@ -17,6 +17,18 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
     public class PhillyPoacher : Entree
     {
+
+        /// <summary>
+        /// Description of the item
+        /// </summary>
+        /// <returns></returns>
+       private string description = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
+        public override String Description
+        {
+            get => description;
+        }
+
         public override event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets the price of the Item

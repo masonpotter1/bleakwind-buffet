@@ -14,150 +14,106 @@
 </div>
 
 <form>
-    <input type="checkbox" name="EntreeBox" />
-    <input type="checkbox" name="DrinkBox" />
-    <input type="checkbox" name="SideBox" />
+    <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+    <input type="submit" value="Search" /> <br />
+    <label name="Entree_Box"> Entree </label>
+    <input type="checkbox" name="EntreeBox" /><br />
+    <label name="Drink_Box"> Drink </label>
+    <input type="checkbox" name="DrinkBox" /> <br />
+    <label name="Side_Box">Side</label>
+    <input type="checkbox" name="SideBox" /> <br />
+
+
+    <label name="Calories_Display">Calories</label>
+    <input type="range" name="Cal_Range" value="2000" min="1" max="2000" oninput="this.nextElementSibling.value = this.value">
+    <output>2000</output> <br />
+
+    <label name="Price_Display">Price</label>
+    <input type="range" name="Price_Range" value="20" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+    <output>20</output> <br />
 
 </form>
 
-@* this represents all of the entree options price and calories*@
-<div>
-    <h2 class="display-4"> Entree </h2>
-    <ul>
-        @foreach (Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Menu.AllEntrees)
-        {
-            <li>
-                <p>
-                    @entree.ToString() <br />
-                    Calories - @entree.Calories
-                </p>
-            </li>
-        }
-
-    </ul>
-
-</div>
+<div class="row">
 
 
-@* this represents all the prices and calories of the side options *@
-<div>
-    <h2 class="display-4"> Side </h2>
-    <div>
-        <ul>
-            <li>
-                Dragonborn Waffle Fries <br />
-                Small   -  $0.42  Calories - 77 <br />
-                Medium  -  $0.76  Calories - 89<br />
-                Large   -  $0.96  Calories - 100<br />
-            </li>
-        </ul>
+    <div class="column">
+
+        <div class="Entree">
+            <h2 class="display-4"> Entree </h2>
+            <ul>
+                @foreach (Data.IOrderItem entree in BleakwindBuffet.Data.Menu.Menu.AllEntrees)
+                {
+                    <li>
+                        <p>
+                            @entree.ToString() <br />
+                            Calories - @entree.Calories <br />
+                            @entree.Description
+                        </p>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+
     </div>
 
-    <div>
-        <ul>
-            <li>
-                Fried Miraak <br />
-                Small   -  $1.78  Calories - 151 <br />
-                Medium  -  $2.01  Calories - 236<br />
-                Large   -  $2.88  Calories - 306<br />
-            </li>
-        </ul>
+
+    <div class="column">
+
+        <div class="Side">
+            <h2 class="display-4"> Sides </h2>
+            <ul>
+                @foreach (Data.IOrderItem Side in BleakwindBuffet.Data.Menu.Menu.AllSides)
+                {
+                    <li>
+                        <p>
+                            @Side.ToString() <br />
+                            Calories - @Side.Calories <br />
+                            @Side.Description
+                        </p>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+
     </div>
 
-    <div>
-        <ul>
-            <li>
-                Vokun Salad <br />
-                Small   -  $0.93  Calories - 41 <br />
-                Medium  -  $1.28  Calories - 52<br />
-                Large   -  $1.82  Calories - 73<br />
-            </li>
-        </ul>
+
+    <div class="column">
+        <div class="Drink">
+            <h2 class="display-4"> Drinks </h2>
+            <ul>
+                @foreach (Data.IOrderItem Drink in BleakwindBuffet.Data.Menu.Menu.AllDrinks)
+                {
+                    <li>
+                        <p>
+                            @Drink.ToString() <br />
+                            Calories - @Drink.Calories <br />
+                            @Drink.Description
+                        </p>
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+        <div>
+            <h2 class="display-4"> Soda Flavors </h2>
+            @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+            {
+                <ul>
+                    <li class="right">
+                        @flavor.ToString()
+                    </li>
+                </ul>
+
+            }
+        </div>
     </div>
-
-    <div>
-        <ul>
-            <li>
-                Mad Otar Grits <br />
-                Small   -  $1.22  Calories - 105 <br />
-                Medium  -  $1.58  Calories - 142<br />
-                Large   -  $1.93  Calories - 179<br />
-            </li>
-        </ul>
-    </div>
-</div>
-
-@* this represents all of the drink options price and calories*@
-<div>
-    <h2 class="display-4"> Drink </h2>
-    <div>
-        <ul>
-            <li>
-                Arentino Apple Juice <br />
-                Small   -  $0.62  Calories - 44 <br />
-                Medium  -  $0.87  Calories - 88<br />
-                Large   -  $1.01  Calories - 132<br />
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <ul>
-            <li>
-                Candlehearth Coffee <br />
-                Small   -  $0.75  Calories - 7 <br />
-                Medium  -  $1.25  Calories - 10<br />
-                Large   -  $1.75  Calories - 20<br />
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <ul>
-            <li>
-                Markarth Milk <br />
-                Small   -  $1.05  Calories - 56 <br />
-                Medium  -  $1.11  Calories - 72<br />
-                Large   -  $1.22  Calories - 93<br />
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <ul>
-            <li>
-                Warrior Water <br />
-                Small   -  $0.00  Calories - 0 <br />
-                Medium  -  $0.00  Calories - 0<br />
-                Large   -  $0.00  Calories - 0<br />
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <ul>
-            <li>
-                Sailor Soda <br />
-                Small   -  $1.42  Calories - 117 <br />
-                Medium  -  $1.74  Calories - 153<br />
-                Large   -  $2.07  Calories - 205<br />
-            </li>
-        </ul>
-    </div>
-</div>
-
-@* this represents all the flavors of the soda*@
-<div class="text-right">
-    <h2 class="display-4"> Soda Flavors </h2>
-    @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
-    {
-        <ul>
-            <li class="right" >
-                @flavor.ToString()
-            </li>
-        </ul>
-
-    }
 </div>
 
 <br />

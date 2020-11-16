@@ -20,6 +20,7 @@ namespace Data
         /// Public method to return the list of instructions
         /// </summary>
          List<string> SpecialInstructions { get; }
-       
+
+        String Description { get; }
     }
 }
